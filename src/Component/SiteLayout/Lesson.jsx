@@ -2,13 +2,13 @@ import React from 'react'
 
 export default function Lessen() {
   return (
-    <div class="container">
-            <section class="term-content">
+    <div className="container">
+            <section className="term-content">
                 <header><h1> دوره آموزشی ساخت ربات تلگرام </h1></header>
-                <div class="row">
+                <div className="row">
 
-                    <div class="col-md-8 col-sm-12 col-xs-12 pull-left">
-                        <section class="term-description">
+                    <div className="col-md-8 col-sm-12 col-xs-12 pull-left">
+                        <section className="term-description">
                             <img src="images/pic/big-thumb.jpg"/>
 
                             <h2> ربات تلگرام برای چه کاری مفید است ؟ </h2>
@@ -31,48 +31,48 @@ export default function Lessen() {
                             </ul>
                         </section>
 
-                        <section class="user-comments">
+                        <section className="user-comments">
                             <header><h3> نظرات کاربران </h3></header>
-                            <div class="inner">
+                            <div className="inner">
                                 <form>
-                                    <div class="row">
-                                        <div class="col-md-4 col-sm-12 col-xs-12">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="نام و نام خانوادگی"/>
+                                    <div className="row">
+                                        <div className="col-md-4 col-sm-12 col-xs-12">
+                                            <div className="form-group">
+                                                <input type="text" className="form-control" placeholder="نام و نام خانوادگی"/>
                                             </div>
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="ایمیل"/>
+                                            <div className="form-group">
+                                                <input type="text" className="form-control" placeholder="ایمیل"/>
                                             </div>
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="شماره تماس"/>
+                                            <div className="form-group">
+                                                <input type="text" className="form-control" placeholder="شماره تماس"/>
                                             </div>
                                         </div>
-                                        <div class="col-md-8 col-sm-12 col-xs-12">
-                                            <div class="form-group">
-                                                <textarea class="form-control" placeholder="متن نظر"></textarea>
+                                        <div className="col-md-8 col-sm-12 col-xs-12">
+                                            <div className="form-group">
+                                                <textarea className="form-control" placeholder="متن نظر"></textarea>
                                             </div>
-                                            <div class="row">
-                                                <div class="col-md-8 col-sm-7 col-xs-7">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" placeholder="کد امنیتی"/>
+                                            <div className="row">
+                                                <div className="col-md-8 col-sm-7 col-xs-7">
+                                                    <div className="form-group">
+                                                        <input type="text" className="form-control" placeholder="کد امنیتی"/>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-4 col-sm-5 col-xs-5">
+                                                <div className="col-md-4 col-sm-5 col-xs-5">
                                                     <img src="images/captcha.jpg"/>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-xs-12">
-                                            <button type="submit" class="btn btn-success"> ثبت دیدگاه </button>
+                                        <div className="col-xs-12">
+                                            <button type="submit" className="btn btn-success"> ثبت دیدگاه </button>
                                         </div>
                                     </div>
                                 </form>
 
-                                <div class="comment-list">
+                                <div className="comment-list">
                                 
-                                    <div class="comment-row">
+                                    <div className="comment-row">
                                         <img src="images/pic/avatar.jpg"/>
-                                        <div class="left-col">
+                                        <div className="left-col">
                                             <h3> میترا رحیمی </h3>
                                             <span>12/03/1397</span>
                                             <p>
@@ -81,9 +81,9 @@ export default function Lessen() {
                                         </div>
                                     </div>
                                    
-                                    <div class="comment-row">
+                                    <div className="comment-row">
                                         <img src="images/pic/avatar.jpg"/>
-                                        <div class="left-col">
+                                        <div className="left-col">
                                             <h3> میترا رحیمی </h3>
                                             <span>12/03/1397</span>
                                             <p>
@@ -93,9 +93,9 @@ export default function Lessen() {
                                     </div>
                                     
                                    
-                                    <div class="comment-row">
+                                    <div className="comment-row">
                                         <img src="images/pic/avatar.jpg"/>
-                                        <div class="left-col">
+                                        <div className="left-col">
                                             <h3> میترا رحیمی </h3>
                                             <span>12/03/1397</span>
                                             <p>
@@ -104,9 +104,9 @@ export default function Lessen() {
                                         </div>
                                     </div>
                                   
-                                    <div class="comment-row">
+                                    <div className="comment-row">
                                         <img src="images/pic/avatar.jpg"/>
-                                        <div class="left-col">
+                                        <div className="left-col">
                                             <h3> میترا رحیمی </h3>
                                             <span>12/03/1397</span>
                                             <p>
@@ -115,9 +115,9 @@ export default function Lessen() {
                                         </div>
                                     </div>
                                   
-                                    <div class="comment-row">
+                                    <div className="comment-row">
                                         <img src="images/pic/avatar.jpg"/>
-                                        <div class="left-col">
+                                        <div className="left-col">
                                             <h3> میترا رحیمی </h3>
                                             <span>12/03/1397</span>
                                             <p>
@@ -128,18 +128,18 @@ export default function Lessen() {
                                     
 
                                     <nav aria-label="Page navigation">
-                                        <ul class="pagination justify-content-center">
-                                            <li class="page-item">
-                                              <a class="page-link" href="#" aria-label="Previous">
-                                                <span aria-hidden="true"><i class="zmdi zmdi-chevron-right"></i></span>
+                                        <ul className="pagination justify-content-center">
+                                            <li className="page-item">
+                                              <a className="page-link" href="#" aria-label="Previous">
+                                                <span aria-hidden="true"><i className="zmdi zmdi-chevron-right"></i></span>
                                               </a>
                                             </li>
-                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                            <li class="page-item">
-                                              <a class="page-link" href="#" aria-label="Next">
-                                                <span aria-hidden="true"><i class="zmdi zmdi-chevron-left"></i></span>
+                                            <li className="page-item"><a className="page-link" href="#">1</a></li>
+                                            <li className="page-item"><a className="page-link" href="#">2</a></li>
+                                            <li className="page-item"><a className="page-link" href="#">3</a></li>
+                                            <li className="page-item">
+                                              <a className="page-link" href="#" aria-label="Next">
+                                                <span aria-hidden="true"><i className="zmdi zmdi-chevron-left"></i></span>
                                               </a>
                                             </li>
                                         </ul>
@@ -150,8 +150,8 @@ export default function Lessen() {
                         </section>
                     </div>
 
-                    <aside class="col-md-4 col-sm-12 col-xs-12 pull-right">
-                        <div class="statistics">
+                    <aside className="col-md-4 col-sm-12 col-xs-12 pull-right">
+                        <div className="statistics">
                             <ul>
                                 <li>
                                     <span> مدت دوره </span>
@@ -170,7 +170,7 @@ export default function Lessen() {
                             <a href=""> شرکت در دوره : 450.000 تومان </a>
                         </div>
 
-                        <article class="teacher-info">
+                        <article className="teacher-info">
                             <img src="images/pic/avatar.jpg"/>
                             <h2> مدرس : ایمان مدائنی </h2>
                             <p>
@@ -178,7 +178,7 @@ export default function Lessen() {
                             </p>
                         </article>
 
-                        <article class="term-info">
+                        <article className="term-info">
                             <h2> اطلاعات این دوره </h2>
                             <ul>
                                 <li>سطح دوره: پیشرفته</li>
@@ -189,15 +189,15 @@ export default function Lessen() {
                             </ul>
                         </article>
 
-                        <div class="share-layer">
+                        <div className="share-layer">
                             <span> به اشتراک گذاری </span>
-                            <a href=""><i class="zmdi zmdi-facebook"></i></a>
-                            <a href=""><i class="zmdi zmdi-google-old"></i></a>
-                            <a href=""><i class="zmdi zmdi-twitter"></i></a>
-                            <a href=""><i class="zmdi zmdi-linkedin"></i></a>
+                            <a href=""><i className="zmdi zmdi-facebook"></i></a>
+                            <a href=""><i className="zmdi zmdi-google-old"></i></a>
+                            <a href=""><i className="zmdi zmdi-twitter"></i></a>
+                            <a href=""><i className="zmdi zmdi-linkedin"></i></a>
                         </div>
 
-                        <div class="tags-layer">
+                        <div className="tags-layer">
                             <a href=""> ربات تلگرام </a>
                             <a href=""> ساخت ربات </a>
                             <a href=""> برنامه نویسی ربات </a>

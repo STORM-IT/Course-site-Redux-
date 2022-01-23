@@ -3,18 +3,18 @@ import React from 'react'
 export default function Acount_Create() {
   return (
     <main>
-                <div class="container">
-                    <div class="user-account">
-                        <div class="row">
-                            <div class="col-md-3 col-sm-4 col-xs-12">
+                <div className="container">
+                    <div className="user-account">
+                        <div className="row">
+                            <div className="col-md-3 col-sm-4 col-xs-12">
                                 <aside>
 
-                                    <div class="avatar-layer">
-                                        <div class="img-layer">
-                                            <a href="" class="change-image"><i class="zmdi zmdi-edit"></i></a>
+                                    <div className="avatar-layer">
+                                        <div className="img-layer">
+                                            <a href="" className="change-image"><i className="zmdi zmdi-edit"></i></a>
                                             <img src="images/pic/avatar.jpg" />
                                         </div>
-                                        <div class="detail">
+                                        <div className="detail">
                                             <span> ایمان مدائنی </span>
                                             <span> عضویت : 01/01/1395 </span>
                                         </div>
@@ -22,7 +22,7 @@ export default function Acount_Create() {
 
                                     <section>
                                         <header><h3> میز کار </h3></header>
-                                        <div class="inner">
+                                        <div className="inner">
                                             <ul>
                                                 <li><a href=""> مشاهده حساب کابری </a></li>
                                                 <li><a href=""> ویرایش حساب کابری </a></li>
@@ -34,68 +34,68 @@ export default function Acount_Create() {
                                     </section>
                                 </aside>
                             </div>
-                            <div class="col-md-9 col-sm-8 col-xs-12">
-                                <section class="user-account-content">
+                            <div className="col-md-9 col-sm-8 col-xs-12">
+                                <section className="user-account-content">
                                     <header><h1> ویرایش حساب کاربری </h1></header>
-                                    <div class="inner form-layer">
+                                    <div className="inner form-layer">
                                         <form action="" method="">
 
-                                            <div class="row">
-                                                <div class="col-md-7 col-sm-8 col-xs-12">
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon" id="username"><i class="zmdi zmdi-account"></i></span>
-                                                        <input type="text" class="form-control" placeholder="نام و نام خانوادگی" aria-describedby="username" />
+                                            <div className="row">
+                                                <div className="col-md-7 col-sm-8 col-xs-12">
+                                                    <div className="input-group">
+                                                        <span className="input-group-addon" id="username"><i className="zmdi zmdi-account"></i></span>
+                                                        <input type="text" className="form-control" placeholder="نام و نام خانوادگی" aria-describedby="username" />
                                                     </div>
                                                 </div>
-                                                <div class="col-md-7 col-sm-8 col-xs-12">
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon" id="email-address"><i class="zmdi zmdi-email"></i></span>
-                                                        <input type="text" class="form-control" placeholder="ایمیل" aria-describedby="email-address" />
+                                                <div className="col-md-7 col-sm-8 col-xs-12">
+                                                    <div className="input-group">
+                                                        <span className="input-group-addon" id="email-address"><i className="zmdi zmdi-email"></i></span>
+                                                        <input type="text" className="form-control" placeholder="ایمیل" aria-describedby="email-address" />
                                                     </div>
                                                 </div>
-                                                <div class="col-md-7 col-sm-8 col-xs-12">
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon" id="password"><i class="zmdi zmdi-lock"></i></span>
-                                                        <input type="text" class="form-control" placeholder="رمز عبور " aria-describedby="password" />
+                                                <div className="col-md-7 col-sm-8 col-xs-12">
+                                                    <div className="input-group">
+                                                        <span className="input-group-addon" id="password"><i className="zmdi zmdi-lock"></i></span>
+                                                        <input type="text" className="form-control" placeholder="رمز عبور " aria-describedby="password" />
                                                     </div>
                                                 </div>
-                                                <div class="col-md-7 col-sm-8 col-xs-12">
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon" id="username"><i class="zmdi zmdi-account"></i></span>
-                                                        <input type="text" class="form-control" placeholder="نام و نام خانوادگی" aria-describedby="username" />
+                                                <div className="col-md-7 col-sm-8 col-xs-12">
+                                                    <div className="input-group">
+                                                        <span className="input-group-addon" id="username"><i className="zmdi zmdi-account"></i></span>
+                                                        <input type="text" className="form-control" placeholder="نام و نام خانوادگی" aria-describedby="username" />
                                                     </div>
                                                 </div>
-                                                <div class="col-md-7 col-sm-8 col-xs-12">
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon" id="email-address"><i class="zmdi zmdi-email"></i></span>
-                                                        <input type="text" class="form-control" placeholder="ایمیل" aria-describedby="email-address" />
+                                                <div className="col-md-7 col-sm-8 col-xs-12">
+                                                    <div className="input-group">
+                                                        <span className="input-group-addon" id="email-address"><i className="zmdi zmdi-email"></i></span>
+                                                        <input type="text" className="form-control" placeholder="ایمیل" aria-describedby="email-address" />
                                                     </div>
                                                 </div>
-                                                <div class="col-md-7 col-sm-8 col-xs-12">
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon" id="password"><i class="zmdi zmdi-lock"></i></span>
-                                                        <input type="text" class="form-control" placeholder="رمز عبور " aria-describedby="password" />
+                                                <div className="col-md-7 col-sm-8 col-xs-12">
+                                                    <div className="input-group">
+                                                        <span className="input-group-addon" id="password"><i className="zmdi zmdi-lock"></i></span>
+                                                        <input type="text" className="form-control" placeholder="رمز عبور " aria-describedby="password" />
                                                     </div>
                                                 </div>
-                                                <div class="col-md-7 col-sm-8 col-xs-12">
-                                                    <div class="checkbox-layer">
+                                                <div className="col-md-7 col-sm-8 col-xs-12">
+                                                    <div className="checkbox-layer">
                                                         <label><input type="checkbox" name="" />  گزینه ی چک باکس </label>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-7 col-sm-8 col-xs-12">
-                                                    <div class="radio-layer">
+                                                <div className="col-md-7 col-sm-8 col-xs-12">
+                                                    <div className="radio-layer">
                                                         <label><input type="radio" name="" />  گزینه ی رادیوباتن </label>
                                                         <label><input type="radio" name="" />  گزینه ی رادیوباتن </label>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-7 col-sm-8 col-xs-12">
-                                                    <div class="link">
-                                                        <a href=""> <i class="zmdi zmdi-lock"></i> رمز عبور خود را فراموش کرده ام !</a>
-                                                        <a href=""> <i class="zmdi zmdi-account"></i> عضویت در سایت </a>
+                                                <div className="col-md-7 col-sm-8 col-xs-12">
+                                                    <div className="link">
+                                                        <a href=""> <i className="zmdi zmdi-lock"></i> رمز عبور خود را فراموش کرده ام !</a>
+                                                        <a href=""> <i className="zmdi zmdi-account"></i> عضویت در سایت </a>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-7 col-sm-8 col-xs-12">
-                                                    <button class="btn btn-success"> ویرایش اطلاعات </button>
+                                                <div className="col-md-7 col-sm-8 col-xs-12">
+                                                    <button className="btn btn-success"> ویرایش اطلاعات </button>
                                                 </div>
                                             </div>
 

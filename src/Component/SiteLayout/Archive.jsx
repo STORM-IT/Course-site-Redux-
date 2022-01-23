@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet'
 import { Link } from 'react-router-dom'
 
 export default function Archive() {
-    
+
   return (
     <Fragment>
         <Helmet>
@@ -11,10 +11,10 @@ export default function Archive() {
                 <title>تاپلرن | دوره ها</title>
                 <link rel="canonical" href="http://mysite.com/example" />
             </Helmet>
-                  <div class="main-menu">
-                <div class="container">
+                  <div className="main-menu">
+                <div className="container">
                     <nav>
-                        <span class="responsive-sign"><i class="zmdi zmdi-menu"></i></span>
+                        <span className="responsive-sign"><i className="zmdi zmdi-menu"></i></span>
                         <ul>
                             <li><a href=""> برنامه نویسی موبایل </a>
                                 <ul>
@@ -50,34 +50,34 @@ export default function Archive() {
             </div>
 
 
-            <div class="container">
+            <div className="container">
                 <nav aria-label="breadcrumb">
-                    <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">تاپ لرن</a></li>
-                        <li class="breadcrumb-item active"><a href="#">دوره ها</a></li>
-                        <li class="breadcrumb-item active" aria-current="page"> برنامه نویسی وب </li>
+                    <ul className="breadcrumb">
+                        <li className="breadcrumb-item"><a href="#">تاپ لرن</a></li>
+                        <li className="breadcrumb-item active"><a href="#">دوره ها</a></li>
+                        <li className="breadcrumb-item active" aria-current="page"> برنامه نویسی وب </li>
                     </ul>
                 </nav>
             </div>
 
-            <div class="container">
-                <section class="term-categories">
+            <div className="container">
+                <section className="term-categories">
 
-                    <div class="top-bar">
+                    <div className="top-bar">
 
                         <header><h1> دوره های <span> برنامه نویسی وب </span> </h1> <span> 123 دوره </span></header>
 
-                        <div class="row">
-                            <div class="col-md-4 col-sm-12 col-xs-12 pull-right">
+                        <div className="row">
+                            <div className="col-md-4 col-sm-12 col-xs-12 pull-right">
                                 <form action="" method="">
-                                    <div class="input">
+                                    <div className="input">
                                         <input type="text" name="" placeholder="موضوع مورد نظر ..." />
-                                        <button><i class="zmdi zmdi-search"></i></button>
+                                        <button><i className="zmdi zmdi-search"></i></button>
                                     </div>
                                 </form>
                             </div>
-                            <div class="col-md-4 col-sm-6 col-xs-12 pull-right">
-                                <div class="switch-field available">
+                            <div className="col-md-4 col-sm-6 col-xs-12 pull-right">
+                                <div className="switch-field available">
                                     <input id="available-filter-1" name="available" value="all" checked="" type="radio" />
                                     <label for="available-filter-1"> همه </label>
                                     <input id="available-filter-2" name="available" value="off" type="radio" />
@@ -86,8 +86,8 @@ export default function Archive() {
                                     <label for="available-filter-3"> رایگان </label>
                                 </div>
                             </div>
-                            <div class="col-md-4 col-sm-6 col-xs-12 pull-left">
-                                <div class="select-ddl">
+                            <div className="col-md-4 col-sm-6 col-xs-12 pull-left">
+                                <div className="select-ddl">
                                     <select>
                                         <option> مرتب سازی </option>
                                         <option> قیمت </option>
@@ -99,13 +99,13 @@ export default function Archive() {
                         </div>
                     </div>
 
-                    <div class="row">
+                    <div className="row">
 
-                        <aside class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
+                        <aside className="col-lg-3 col-md-4 col-sm-12 col-xs-12">
 
-                            <section class="aside-section filter-by-category">
+                            <section className="aside-section filter-by-category">
                                 <header><h3> دسته بندی موضوعات </h3></header>
-                                <div class="inner">
+                                <div className="inner">
                                     <ul>
                                         <li>
                                             <input type="checkbox" name="" id="cat-1" />
@@ -153,14 +153,14 @@ export default function Archive() {
 
                         </aside>
 
-                        <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12">
+                        <div className="col-lg-9 col-md-8 col-sm-12 col-xs-12">
 
-                            <section class="terms-items">
-                                <div class="row">
+                            <section className="terms-items">
+                                <div className="row">
 
-                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 term-col">
+                                    <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12 term-col">
                                         <article>
-                                            <a href="" class="img-layer"><img src="images/pic/1.jpg" /></a>
+                                            <a href="" className="img-layer"><img src="images/pic/1.jpg" /></a>
                                             <h2><Link to="/singleCourse/TelegramRobot"> آموزش ساخت رباط تلگرام </Link></h2>
                                             <span> رایگان </span>
                                             <i>1:52:32</i>
@@ -168,63 +168,63 @@ export default function Archive() {
                                     </div>
 
 
-                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 term-col">
+                                    <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12 term-col">
                                         <article>
-                                            <a href="" class="img-layer"><img src="images/pic/2.jpg" /></a>
+                                            <a href="" className="img-layer"><img src="images/pic/2.jpg" /></a>
                                             <h2><a href=""> آموزش متریال دیاین در زامارین </a></h2>
                                             <span> رایگان </span>
                                             <i>1:52:32</i>
                                         </article>
                                     </div>
 
-                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 term-col">
+                                    <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12 term-col">
                                         <article>
-                                            <a href="" class="img-layer"><img src="images/pic/3.jpg" /></a>
+                                            <a href="" className="img-layer"><img src="images/pic/3.jpg" /></a>
                                             <h2><a href=""> آموزش متریال دیاین در زامارین </a></h2>
                                             <span> 150.000 تومان </span>
                                             <i>1:52:32</i>
                                         </article>
                                     </div>
 
-                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 term-col">
+                                    <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12 term-col">
                                         <article>
-                                            <a href="" class="img-layer"><img src="images/pic/4.jpg" /></a>
+                                            <a href="" className="img-layer"><img src="images/pic/4.jpg" /></a>
                                             <h2><a href=""> آموزش متریال دیاین در زامارین </a></h2>
                                             <span> رایگان </span>
                                             <i>1:52:32</i>
                                         </article>
                                     </div>
 
-                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 term-col">
+                                    <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12 term-col">
                                         <article>
-                                            <a href="" class="img-layer"><img src="images/pic/5.jpg" /></a>
+                                            <a href="" className="img-layer"><img src="images/pic/5.jpg" /></a>
                                             <h2><a href=""> آموزش متریال دیاین در زامارین </a></h2>
                                             <span> 15.000 تومان </span>
                                             <i>1:52:32</i>
                                         </article>
                                     </div>
 
-                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 term-col">
+                                    <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12 term-col">
                                         <article>
-                                            <a href="" class="img-layer"><img src="images/pic/6.jpg" /></a>
+                                            <a href="" className="img-layer"><img src="images/pic/6.jpg" /></a>
                                             <h2><a href=""> آموزش متریال دیاین در زامارین </a></h2>
                                             <span> رایگان </span>
                                             <i>1:52:32</i>
                                         </article>
                                     </div>
 
-                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 term-col">
+                                    <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12 term-col">
                                         <article>
-                                            <a href="" class="img-layer"><img src="images/pic/7.jpg" /></a>
+                                            <a href="" className="img-layer"><img src="images/pic/7.jpg" /></a>
                                             <h2><a href=""> آموزش متریال دیاین در زامارین </a></h2>
                                             <span> 20.000 تومان </span>
                                             <i>1:52:32</i>
                                         </article>
                                     </div>
 
-                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 term-col">
+                                    <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12 term-col">
                                         <article>
-                                            <a href="" class="img-layer"><img src="images/pic/8.jpg" /></a>
+                                            <a href="" className="img-layer"><img src="images/pic/8.jpg" /></a>
                                             <h2><a href=""> آموزش متریال دیاین در زامارین </a></h2>
                                             <span> 75.000 تومان </span>
                                             <i>1:52:32</i>
@@ -232,9 +232,9 @@ export default function Archive() {
                                     </div>
 
 
-                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 term-col">
+                                    <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12 term-col">
                                         <article>
-                                            <a href="" class="img-layer"><img src="images/pic/4.jpg" /></a>
+                                            <a href="" className="img-layer"><img src="images/pic/4.jpg" /></a>
                                             <h2><a href=""> آموزش متریال دیاین در زامارین </a></h2>
                                             <span> 75.000 تومان </span>
                                             <i>1:52:32</i>
@@ -245,18 +245,18 @@ export default function Archive() {
 
 
                                 <nav aria-label="Page navigation">
-                                    <ul class="pagination justify-content-center">
-                                        <li class="page-item">
-                                            <a class="page-link" href="#" aria-label="Previous">
-                                                <span aria-hidden="true"><i class="zmdi zmdi-chevron-right"></i></span>
+                                    <ul className="pagination justify-content-center">
+                                        <li className="page-item">
+                                            <a className="page-link" href="#" aria-label="Previous">
+                                                <span aria-hidden="true"><i className="zmdi zmdi-chevron-right"></i></span>
                                             </a>
                                         </li>
-                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#" aria-label="Next">
-                                                <span aria-hidden="true"><i class="zmdi zmdi-chevron-left"></i></span>
+                                        <li className="page-item"><a className="page-link" href="#">1</a></li>
+                                        <li className="page-item"><a className="page-link" href="#">2</a></li>
+                                        <li className="page-item"><a className="page-link" href="#">3</a></li>
+                                        <li className="page-item">
+                                            <a className="page-link" href="#" aria-label="Next">
+                                                <span aria-hidden="true"><i className="zmdi zmdi-chevron-left"></i></span>
                                             </a>
                                         </li>
                                     </ul>

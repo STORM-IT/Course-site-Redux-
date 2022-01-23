@@ -4,11 +4,11 @@ import {Link} from 'react-router-dom'
 export default function Header() {
     return (
         <Fragment>
-        <div class="landing-layer">
-            <div class="container">
+        <div className="landing-layer">
+            <div className="container">
                 <nav>
-                    <div class="row">
-                        <div class="col-sm-6 col-xs-12">
+                    <div className="row">
+                        <div className="col-sm-6 col-xs-12">
                             <ul>
                                 <li><Link to="/"> تاپ لرن </Link></li>
                                 <li><a href=""> همکاری در فروش </a></li>
@@ -16,13 +16,13 @@ export default function Header() {
                                 <li><a href=""> تماس با ما </a></li>
                             </ul>
                         </div>
-                        <div class="col-sm-6 col-xs-12">
-                            <div class="clientarea">
-                                <div class="loggein ">
-                                    <i class="zmdi zmdi-account"></i><a href=""> ایمان مدائنی ، خوش آمدی </a>
+                        <div className="col-sm-6 col-xs-12">
+                            <div className="clientarea">
+                                <div className="loggein ">
+                                    <i className="zmdi zmdi-account"></i><a href=""> ایمان مدائنی ، خوش آمدی </a>
                                 </div>
-                                <div class="signin hidden">
-                                    <i class="zmdi zmdi-account"></i>
+                                <div className="signin hidden">
+                                    <i className="zmdi zmdi-account"></i>
                                     <a href=""> ورود </a> /
                                     <a href=""> عضویت </a>
                                 </div>
@@ -32,10 +32,10 @@ export default function Header() {
                 </nav>
             </div>
         </div>
-        <div class="main-menu">
-                <div class="container">
+        <div className="main-menu">
+                <div className="container">
                     <nav>
-                        <span class="responsive-sign"><i class="zmdi zmdi-menu"></i></span>
+                        <span className="responsive-sign"><i className="zmdi zmdi-menu"></i></span>
                         <ul>
                             <li><a href=""> برنامه نویسی موبایل </a>
                                 <ul>

@@ -3,11 +3,11 @@ import {Link} from 'react-router-dom'
 export default function Footer() {
   return (
     <footer>
-    <div class="top-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <section class="list">
+    <div className="top-footer">
+        <div className="container">
+            <div className="row">
+                <div className="col-md-3 col-sm-6 col-xs-12">
+                    <section className="list">
                         <header><h4> دسترسی سریع</h4></header>
                         <ul>
                             <li><Link to="/">مشاهده تمامی دوره ها</Link></li>
@@ -19,8 +19,8 @@ export default function Footer() {
                         </ul>
                     </section>
                 </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <section class="list">
+                <div className="col-md-3 col-sm-6 col-xs-12">
+                    <section className="list">
                         <header><h4> دسترسی سریع</h4></header>
                         <ul>
                             <li><a href="">مشاهده تمامی دوره ها</a></li>
@@ -32,8 +32,8 @@ export default function Footer() {
                         </ul>
                     </section>
                 </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <section class="list">
+                <div className="col-md-3 col-sm-6 col-xs-12">
+                    <section className="list">
                         <header><h4> دسترسی سریع</h4></header>
                         <ul>
                             <li><a href="">مشاهده تمامی دوره ها</a></li>
@@ -45,8 +45,8 @@ export default function Footer() {
                         </ul>
                     </section>
                 </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <section class="list">
+                <div className="col-md-3 col-sm-6 col-xs-12">
+                    <section className="list">
                         <header><h4> دسترسی سریع</h4></header>
                         <ul>
                             <li><a href="">مشاهده تمامی دوره ها</a></li>
@@ -61,8 +61,8 @@ export default function Footer() {
             </div>
         </div>
     </div>
-    <div class="bottom-footer">
-        <div class="container">
+    <div className="bottom-footer">
+        <div className="container">
             <p>
                 تمامی حقوق مادی و معنوی این قالب متعلق به <a href=""> تاپ لرن </a> می باشد و هرگونه کپی برداری و انتشار غیر مجاز پیگرد قانونی دارد .
             </p>

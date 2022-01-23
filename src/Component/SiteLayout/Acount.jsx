@@ -4,28 +4,28 @@ export default function Acount() {
 
   return (
     <Fragment>
-            <div class="container">
+            <div className="container">
                 <nav aria-label="breadcrumb">
-                    <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">تاپ لرن</a></li>
-                        <li class="breadcrumb-item active" aria-current="page"> پنل کاربری </li>
+                    <ul className="breadcrumb">
+                        <li className="breadcrumb-item"><a href="#">تاپ لرن</a></li>
+                        <li className="breadcrumb-item active" aria-current="page"> پنل کاربری </li>
                     </ul>
                 </nav>
             </div>
 
             <main>
-                <div class="container">
-                    <div class="user-account">
-                        <div class="row">
-                            <div class="col-md-3 col-sm-4 col-xs-12">
+                <div className="container">
+                    <div className="user-account">
+                        <div className="row">
+                            <div className="col-md-3 col-sm-4 col-xs-12">
                                 <aside>
 
-                                    <div class="avatar-layer">
-                                        <div class="img-layer">
-                                            <a href="" class="change-image"><i class="zmdi zmdi-edit"></i></a>
+                                    <div className="avatar-layer">
+                                        <div className="img-layer">
+                                            <a href="" className="change-image"><i className="zmdi zmdi-edit"></i></a>
                                             <img src="images/pic/avatar.jpg" />
                                         </div>
-                                        <div class="detail">
+                                        <div className="detail">
                                             <span> ایمان مدائنی </span>
                                             <span> عضویت : 01/01/1395 </span>
                                         </div>
@@ -33,7 +33,7 @@ export default function Acount() {
 
                                     <section>
                                         <header><h3> میز کار </h3></header>
-                                        <div class="inner">
+                                        <div className="inner">
                                             <ul>
                                                 <li><a href=""> مشاهده حساب کابری </a></li>
                                                 <li><a href=""> ویرایش حساب کابری </a></li>
@@ -45,18 +45,18 @@ export default function Acount() {
                                     </section>
                                 </aside>
                             </div>
-                            <div class="col-md-9 col-sm-8 col-xs-12">
-                                <section class="user-account-content">
+                            <div className="col-md-9 col-sm-8 col-xs-12">
+                                <section className="user-account-content">
                                     <header><h1> داشبورد </h1></header>
-                                    <div class="inner">
-                                        <div class="account-information">
+                                    <div className="inner">
+                                        <div className="account-information">
                                             <h3> اطلاعات کاربری </h3>
                                             <ul>
-                                                <li> <i class="zmdi zmdi-account"></i> نام و نام خانوادگی : ایمان مدائنی </li>
-                                                <li> <i class="zmdi zmdi-assignment-account"></i> نام کاربری :  imadmadaeni </li>
-                                                <li> <i class="zmdi zmdi-email"></i> ایمیل : imadmadaeni@gmail.com </li>
-                                                <li> <i class="zmdi zmdi-calendar-check"></i> تاریخ عضویت : 01/01/1395 </li>
-                                                <li> <i class="zmdi zmdi-smartphone-android"></i> شماره تماس : 0912000000 </li>
+                                                <li> <i className="zmdi zmdi-account"></i> نام و نام خانوادگی : ایمان مدائنی </li>
+                                                <li> <i className="zmdi zmdi-assignment-account"></i> نام کاربری :  imadmadaeni </li>
+                                                <li> <i className="zmdi zmdi-email"></i> ایمیل : imadmadaeni@gmail.com </li>
+                                                <li> <i className="zmdi zmdi-calendar-check"></i> تاریخ عضویت : 01/01/1395 </li>
+                                                <li> <i className="zmdi zmdi-smartphone-android"></i> شماره تماس : 0912000000 </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -69,11 +69,11 @@ export default function Acount() {
 
 
             <footer>
-                <div class="top-footer">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <section class="list">
+                <div className="top-footer">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-md-3 col-sm-6 col-xs-12">
+                                <section className="list">
                                     <header><h4> دسترسی سریع</h4></header>
                                     <ul>
                                         <li><a href="">مشاهده تمامی دوره ها</a></li>
@@ -85,8 +85,8 @@ export default function Acount() {
                                     </ul>
                                 </section>
                             </div>
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <section class="list">
+                            <div className="col-md-3 col-sm-6 col-xs-12">
+                                <section className="list">
                                     <header><h4> دسترسی سریع</h4></header>
                                     <ul>
                                         <li><a href="">مشاهده تمامی دوره ها</a></li>
@@ -98,8 +98,8 @@ export default function Acount() {
                                     </ul>
                                 </section>
                             </div>
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <section class="list">
+                            <div className="col-md-3 col-sm-6 col-xs-12">
+                                <section className="list">
                                     <header><h4> دسترسی سریع</h4></header>
                                     <ul>
                                         <li><a href="">مشاهده تمامی دوره ها</a></li>
@@ -111,8 +111,8 @@ export default function Acount() {
                                     </ul>
                                 </section>
                             </div>
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-                                <section class="list">
+                            <div className="col-md-3 col-sm-6 col-xs-12">
+                                <section className="list">
                                     <header><h4> دسترسی سریع</h4></header>
                                     <ul>
                                         <li><a href="">مشاهده تمامی دوره ها</a></li>
@@ -127,8 +127,8 @@ export default function Acount() {
                         </div>
                     </div>
                 </div>
-                <div class="bottom-footer">
-                    <div class="container">
+                <div className="bottom-footer">
+                    <div className="container">
                         <p>
                             تمامی حقوق مادی و معنوی این قالب متعلق به <a href=""> تاپ لرن </a> می باشد و هرگونه کپی برداری و انتشار غیر مجاز پیگرد قانونی دارد .
                         </p>
