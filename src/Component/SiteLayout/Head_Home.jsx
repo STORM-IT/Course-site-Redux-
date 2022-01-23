@@ -35,10 +35,10 @@ export default function Head_Home() {
                     </div>
                 </nav>
                 <header>
-                    <a href="" className="logo">
+                    <Link to="/" className="logo">
                         <img src="./images/logo.png" />
                         {/* <img src="../../../public/images/logo.png" /> */}
-                    </a>
+                    </Link>
                     <h1> با اساتید مجرب و کارآزموده در خودآموز تاپ لرن </h1>
                     <h2>
                         {" "}

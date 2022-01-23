@@ -22,6 +22,7 @@ import Lessen from './Component/SiteLayout/Lesson'
 import Login from './Component/SiteLayout/Login'
 import Register from './Component/SiteLayout/Resister'
 import SingleCourse from './Component/SiteLayout/SingleCourse'
+import Course from './Component/SiteLayout/Course';
 
 function App() {
   useEffect(() => {
@@ -40,11 +41,12 @@ function App() {
         <Routes>
           <Route path='/about/Acount_Info' element={<Acount_Info />} />
           <Route path='/about/Acount_Edit' element={<Acount_Edit />} />
-          <Route path='/' element={<Archive />} />
+          <Route path='/archive' element={<Archive />} />
           <Route path='/about/Lessen' element={<Lessen />} />
           <Route path='/about/Login' element={<Login />} />
           <Route path='/about/Register' element={<Register />} />
           <Route path='/singleCourse/TelegramRobot' element={<SingleCourse />} />
+          <Route path='/' element={<Course />} />
         </Routes>
         <Footer />
       </Router>
