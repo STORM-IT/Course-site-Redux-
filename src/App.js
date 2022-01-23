@@ -1,16 +1,16 @@
-import React, { Fragment } from 'react'
-import {ToastContainer} from 'react-toastify'
+import React, { Fragment, useEffect } from 'react'
+import { ToastContainer } from 'react-toastify'
 
 import {
-    BrowserRouter as Router,
-    Routes,
-    Route,
-    Link,
-    NavLink,
-    useLocation,
-    withRouter
-    
-  } from "react-router-dom";
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  NavLink,
+  useLocation,
+  withRouter
+
+} from "react-router-dom";
 
 import Acount_Info from './Component/SiteLayout/Acount'
 import Acount_Edit from './Component/SiteLayout/Acount_Create'
@@ -24,28 +24,32 @@ import Register from './Component/SiteLayout/Resister'
 import SingleCourse from './Component/SiteLayout/SingleCourse'
 
 function App() {
+  useEffect(() => {
+  require("./Component/JsFile/script")
+  }, []);
+  
   return (
     <Fragment>
 
-          
-            <Router>
-            <Routes>
-                   <Route path='/*' exact element={<Head_Home/>}/>
-                   <Route path='/about/*'  element={<Header/>}/>
-                </Routes>
-                <Routes>
-                <Route path='/about/Acount_Info' element={<Acount_Info />}/>
-                <Route path='/about/Acount_Edit' element={<Acount_Edit />}/>
-                <Route path='/' element={<Archive />}/>
-                <Route path='/about/Lessen' element={<Lessen />}/>
-                <Route path='/about/Login' element={<Login />}/>
-                <Route path='/about/Register' element={<Register />}/>
-                <Route path='/singleCourse/TelegramRobot' element={<SingleCourse />}/>
-                </Routes>
-                <Footer />
-            </Router>
-            <ToastContainer/>
-        </Fragment>
+
+      <Router>
+        <Routes>
+          <Route path='/*' exact element={<Head_Home />} />
+          <Route path='/about/*' element={<Header />} />
+        </Routes>
+        <Routes>
+          <Route path='/about/Acount_Info' element={<Acount_Info />} />
+          <Route path='/about/Acount_Edit' element={<Acount_Edit />} />
+          <Route path='/' element={<Archive />} />
+          <Route path='/about/Lessen' element={<Lessen />} />
+          <Route path='/about/Login' element={<Login />} />
+          <Route path='/about/Register' element={<Register />} />
+          <Route path='/singleCourse/TelegramRobot' element={<SingleCourse />} />
+        </Routes>
+        <Footer />
+      </Router>
+      <ToastContainer />
+    </Fragment>
   );
 }
 
