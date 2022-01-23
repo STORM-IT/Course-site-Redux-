@@ -21,6 +21,7 @@ import Head_Home from './Component/SiteLayout/Head_Home'
 import Lessen from './Component/SiteLayout/Lesson'
 import Login from './Component/SiteLayout/Login'
 import Register from './Component/SiteLayout/Resister'
+import SingleCourse from './Component/SiteLayout/SingleCourse'
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
                 <Route path='/about/Lessen' element={<Lessen />}/>
                 <Route path='/about/Login' element={<Login />}/>
                 <Route path='/about/Register' element={<Register />}/>
+                <Route path='/singleCourse/TelegramRobot' element={<SingleCourse />}/>
                 </Routes>
                 <Footer />
             </Router>

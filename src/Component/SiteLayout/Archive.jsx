@@ -1,7 +1,9 @@
 import React, { Fragment } from 'react'
 import { Helmet } from 'react-helmet'
+import { Link } from 'react-router-dom'
 
 export default function Archive() {
+    
   return (
     <Fragment>
         <Helmet>
@@ -159,7 +161,7 @@ export default function Archive() {
                                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 term-col">
                                         <article>
                                             <a href="" class="img-layer"><img src="images/pic/1.jpg" /></a>
-                                            <h2><a href=""> آموزش متریال دیاین در زامارین </a></h2>
+                                            <h2><Link to="/singleCourse/TelegramRobot"> آموزش ساخت رباط تلگرام </Link></h2>
                                             <span> رایگان </span>
                                             <i>1:52:32</i>
                                         </article>
