@@ -3,7 +3,7 @@ import React, { useRef, useState } from 'react'
 import {useNavigate} from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { toast } from 'react-toastify';
-import { registerUser } from './services/userServices'
+import { registerUser } from '../services/userServices'
 import SimpleReactValidator from 'simple-react-validator'
 import { Helmet } from 'react-helmet';
 // import { Sugar } from "react-preloaders";

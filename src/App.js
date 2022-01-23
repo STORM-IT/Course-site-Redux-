@@ -12,15 +12,15 @@ import {
     
   } from "react-router-dom";
 
-import Acount_Info from './Component/Site Layout/Acount'
-import Acount_Edit from './component/Site Layout/Acount_Create'
-import Archive from './component/Site Layout/Archive'
-import Footer from './component/Site Layout/Footer'
-import Header from './component/Site Layout/Header'
-import Head_Home from './component/Site Layout/Head_Home'
-import Lessen from './component/Site Layout/Lesson'
-import Login from './component/Site Layout/Login'
-import Register from './component/Site Layout/Resister'
+import Acount_Info from './Component/SiteLayout/Acount'
+import Acount_Edit from './Component/SiteLayout/Acount_Create'
+import Archive from './Component/SiteLayout/Archive'
+import Footer from './Component/SiteLayout/Footer'
+import Header from './Component/SiteLayout/Header'
+import Head_Home from './Component/SiteLayout/Head_Home'
+import Lessen from './Component/SiteLayout/Lesson'
+import Login from './Component/SiteLayout/Login'
+import Register from './Component/SiteLayout/Resister'
 
 function App() {
   return (
