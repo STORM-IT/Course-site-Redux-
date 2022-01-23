@@ -4,7 +4,7 @@ export default function Head_Home() {
     return (
         // <Router>
 
-        
+    
         
         <div className="landing-layer">
             <div className="container">
@@ -36,7 +36,8 @@ export default function Head_Home() {
                 </nav>
                 <header>
                     <a href="" className="logo">
-                        <img src="images/logo.png" />
+                        <img src="./images/logo.png" />
+                        {/* <img src="../../../public/images/logo.png" /> */}
                     </a>
                     <h1> با اساتید مجرب و کارآزموده در خودآموز تاپ لرن </h1>
                     <h2>
