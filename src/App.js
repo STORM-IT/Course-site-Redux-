@@ -21,7 +21,7 @@ import Course from './Component/SiteLayout/Course';
 
 import http from './Component/services/config.json'
 import { useSelector } from 'react-redux';
-import { paginate } from './Component/utils/paginate';
+import { paginate } from './Component/utils/PaginateIndexSlice';
 
 function App() {
   useEffect(() => {
