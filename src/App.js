@@ -24,6 +24,7 @@ import Register from './Component/SiteLayout/Resister'
 import SingleCourse from './Component/SiteLayout/SingleCourse'
 import Course from './Component/SiteLayout/Course';
 import { useSelector } from 'react-redux';
+import { paginate } from './Component/utils/paginate';
 
 function App() {
   useEffect(() => {
@@ -31,6 +32,7 @@ function App() {
   }, []);
   
   const courses=useSelector(state=>state.courses)
+  const IndexCourses=paginate(courses,1,9);
   console.log(courses);
   return (
     <Fragment>
@@ -47,7 +49,7 @@ function App() {
           <Route path='/about/Login' element={<Login />} />
           <Route path='/about/Register' element={<Register />} />
           <Route path='/singleCourse/TelegramRobot' element={<SingleCourse />} />
-          <Route path='/' element={<Course courses={courses}/>} />
+          <Route path='/' element={<Course courses={IndexCourses}/>} />
         </Routes>
         <Footer />
       </Router>
