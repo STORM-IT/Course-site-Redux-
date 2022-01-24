@@ -3,11 +3,14 @@ import { Helmet } from 'react-helmet'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import Pagination from './Pagination'
-export default function Archive({ courses, http }) {
+import {paginate} from './../utils/PaginateIndexSlice'
+export default function Archive({ http }) {
 
     const [paginNumber,setPaginNumber] = useState(1);
     const courses_state=useSelector(state=>state.courses)
-    debugger
+
+    const courses=paginate(courses_state,paginNumber,9)
+    // debugger
     const handelePaginNumber=(pagin)=>{
         setPaginNumber(pagin);
     }
@@ -168,7 +171,7 @@ export default function Archive({ courses, http }) {
 
                                         <div key={course._id} className="col-lg-4 col-md-4 col-sm-6 col-xs-12 term-col">
                                             <article>
-                                                <Link to={http + "/" + course._id} className="img-layer"><img src="images/pic/1.jpg" /></Link>
+                                                <Link to={http + "/" + course._id} className="img-layer"><img src={http+"/"+course.imageUrl} /></Link>
                                                 <h2><Link to={http + "/" + course._id}>{course.title}</Link></h2>
                                                 <span>{course.price}</span>
                                                 <i>1:52:32</i>
@@ -179,22 +182,9 @@ export default function Archive({ courses, http }) {
                                 </div>
 
 
-                                <nav aria-label="Page navigation">
-                                    <ul className="pagination justify-content-center">
-                                        <li className="page-item">
-                                            <a className="page-link" href="#" aria-label="Previous">
-                                                <span aria-hidden="true"><i className="zmdi zmdi-chevron-right"></i></span>
-                                            </a>
-                                        </li>
-                                        <Pagination currentPage={paginNumber} totallCourses={courses_state} courseLength={courses} setPagination={handelePaginNumber}/>
-                                        <li className="page-item">
-                                            <a className="page-link" href="#" aria-label="Next">
-                                                <span aria-hidden="true"><i className="zmdi zmdi-chevron-left"></i></span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </nav>
-
+                                
+                                        <Pagination currentPage={paginNumber} totallCoursesLength={courses_state.length} courseLength={courses.length} setPagination={handelePaginNumber}/>
+                                        
                             </section>
 
                         </div>
