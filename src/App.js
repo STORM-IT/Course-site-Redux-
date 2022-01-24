@@ -30,7 +30,7 @@ function App() {
   
   const courses=useSelector(state=>state.courses)
   const IndexCourses=paginate(courses,1,8);
-  console.log(courses);
+  // console.log(courses);
   return (
     <Fragment>
       <Router>

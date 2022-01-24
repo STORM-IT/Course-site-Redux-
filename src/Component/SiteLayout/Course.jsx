@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Course = ({ courses }) => {
-    console.log("courses is :" + courses);
     return (
         <section className="terms-items">
             <header>
