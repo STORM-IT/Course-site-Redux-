@@ -2,6 +2,7 @@ import React from 'react'
 import _ from 'lodash'
 
 export default function Pagination({currentPage,totallCourses,courseLength,setPagination}) {
+  
     const IndexCourses=Math.ceil(totallCourses/courseLength)
     const paginations=_.range(IndexCourses +1)
   return (

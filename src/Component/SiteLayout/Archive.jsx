@@ -1,12 +1,16 @@
-import React, { Fragment } from 'react'
+import React, { Fragment,useState } from 'react'
 import { Helmet } from 'react-helmet'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-
+import Pagination from './Pagination'
 export default function Archive({ courses, http }) {
+
+    const [paginNumber,setPaginNumber] = useState(1);
     const courses_state=useSelector(state=>state.courses)
-    // debugger
-    const paginationLength=Math.ceil(courses_state.length/courses.length)
+    debugger
+    const handelePaginNumber=(pagin)=>{
+        setPaginNumber(pagin);
+    }
     return (
         <Fragment>
             <Helmet>
@@ -182,12 +186,7 @@ export default function Archive({ courses, http }) {
                                                 <span aria-hidden="true"><i className="zmdi zmdi-chevron-right"></i></span>
                                             </a>
                                         </li>
-                                        <li className={"page-item"  + "active"}><a className="page-link" href="#">1</a></li>
-                                        <li className="page-item"><a className="page-link" href="#">2</a></li>
-                                        <li className="page-item"><a className="page-link" href="#">3</a></li>
-                                        <li className="page-item"><a className="page-link" href="#">3</a></li>
-                                        <li className="page-item"><a className="page-link" href="#">3</a></li>
-                                        <li className="page-item"><a className="page-link" href="#">3</a></li>
+                                        <Pagination currentPage={paginNumber} totallCourses={courses_state} courseLength={courses} setPagination={handelePaginNumber}/>
                                         <li className="page-item">
                                             <a className="page-link" href="#" aria-label="Next">
                                                 <span aria-hidden="true"><i className="zmdi zmdi-chevron-left"></i></span>

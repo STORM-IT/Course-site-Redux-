@@ -41,7 +41,7 @@ function App() {
         <Routes>
           <Route path='/about/Acount_Info' element={<Acount_Info />} />
           <Route path='/about/Acount_Edit' element={<Acount_Edit />} />
-          <Route path='/archive' element={<Archive courses={paginate(courses,1,9)} http={http.toplearnapi}/>} />
+          <Route path='/archive' element={<Archive courses={paginate(courses,1,12)} http={http.toplearnapi}/>} />
           <Route path='/about/Lessen' element={<Lessen />} />
           <Route path='/about/Login' element={<Login />} />
           <Route path='/about/Register' element={<Register />} />
