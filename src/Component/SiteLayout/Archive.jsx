@@ -183,7 +183,7 @@ export default function Archive({ http }) {
 
 
                                 
-                                        <Pagination currentPage={paginNumber} totallCoursesLength={courses_state.length} courseLength={courses.length} setPagination={handelePaginNumber}/>
+                                        <Pagination currentPage={paginNumber} totallCoursesLength={courses_state.length} courseLength={9} setPagination={handelePaginNumber}/>
                                         
                             </section>
 
