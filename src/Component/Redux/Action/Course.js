@@ -1,11 +1,12 @@
 import {getSingleCourse} from './../../services/courseService'
 export const singleCourse=(id)=>{
-    return async (dispatch,state)=>{
+    return async dispatch=>{
         // const Courses=[...state().courses];
         debugger
         const {data}=await getSingleCourse(id)
         
         // console.log(FindCourse);
-        await dispatch({type:"GET_SINGLE_COURSE" ,payload:data})
+        await dispatch({type:"GET_COURSE" ,payload:data.course})
+        
     }
 }

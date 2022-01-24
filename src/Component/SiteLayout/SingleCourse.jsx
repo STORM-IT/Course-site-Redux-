@@ -1,12 +1,16 @@
 import React, { Fragment } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { singleCourse } from "../Redux/Action/Course";
 // import Pagination from "./Pagination";
 
 const SingleCourse = () => {
+    const course= useSelector(state=>state.course)
+    const dispatch=useDispatch();
     return (
         <Fragment>
             <section className="term-content">
                 <header>
-                    <h1> دوره آموزشی ساخت ربات تلگرام </h1>
+                    <h1> {course.title} </h1>
                 </header>
                 <div className="row">
                     <div className="col-md-8 col-sm-12 col-xs-12 pull-left">
