@@ -23,16 +23,17 @@ import Login from './Component/SiteLayout/Login'
 import Register from './Component/SiteLayout/Resister'
 import SingleCourse from './Component/SiteLayout/SingleCourse'
 import Course from './Component/SiteLayout/Course';
+import { useSelector } from 'react-redux';
 
 function App() {
   useEffect(() => {
   require("./Component/JsFile/script")
   }, []);
   
+  const courses=useSelector(state=>state.courses)
+  console.log(courses);
   return (
     <Fragment>
-
-
       <Router>
         <Routes>
           <Route path='/*' exact element={<Head_Home />} />
@@ -46,7 +47,7 @@ function App() {
           <Route path='/about/Login' element={<Login />} />
           <Route path='/about/Register' element={<Register />} />
           <Route path='/singleCourse/TelegramRobot' element={<SingleCourse />} />
-          <Route path='/' element={<Course />} />
+          <Route path='/' element={<Course courses={courses}/>} />
         </Routes>
         <Footer />
       </Router>
