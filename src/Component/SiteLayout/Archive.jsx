@@ -1,9 +1,12 @@
 import React, { Fragment } from 'react'
 import { Helmet } from 'react-helmet'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 export default function Archive({ courses, http }) {
-
+    const courses_state=useSelector(state=>state.courses)
+    // debugger
+    const paginationLength=Math.ceil(courses_state.length/courses.length)
     return (
         <Fragment>
             <Helmet>
@@ -24,7 +27,7 @@ export default function Archive({ courses, http }) {
                             </li>
                             <li><a href=""> برنامه نویسی وب </a>
                                 <ul>
-                                    <li><a href=""> Asp.net WebForms </a></li>
+                                    <li className=""><a href=""> Asp.net WebForms </a></li>
                                     <li><a href=""> Asp.net MVC </a></li>
                                     <li><a href=""> PHP MVC </a></li>
                                     <li><a href=""> PHP FrameWorks </a></li>
@@ -65,7 +68,7 @@ export default function Archive({ courses, http }) {
 
                     <div className="top-bar">
 
-                        <header><h1> دوره های <span> برنامه نویسی وب </span> </h1> <span> 123 دوره </span></header>
+                        <header><h1> دوره های <span> برنامه نویسی وب </span> </h1> <span> {courses.length} دوره </span></header>
 
                         <div className="row">
                             <div className="col-md-4 col-sm-12 col-xs-12 pull-right">
@@ -179,8 +182,11 @@ export default function Archive({ courses, http }) {
                                                 <span aria-hidden="true"><i className="zmdi zmdi-chevron-right"></i></span>
                                             </a>
                                         </li>
-                                        <li className="page-item"><a className="page-link" href="#">1</a></li>
+                                        <li className={"page-item"  + "active"}><a className="page-link" href="#">1</a></li>
                                         <li className="page-item"><a className="page-link" href="#">2</a></li>
+                                        <li className="page-item"><a className="page-link" href="#">3</a></li>
+                                        <li className="page-item"><a className="page-link" href="#">3</a></li>
+                                        <li className="page-item"><a className="page-link" href="#">3</a></li>
                                         <li className="page-item"><a className="page-link" href="#">3</a></li>
                                         <li className="page-item">
                                             <a className="page-link" href="#" aria-label="Next">
