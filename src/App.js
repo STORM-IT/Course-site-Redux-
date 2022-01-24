@@ -4,12 +4,7 @@ import { ToastContainer } from 'react-toastify'
 import {
   BrowserRouter as Router,
   Routes,
-  Route,
-  Link,
-  NavLink,
-  useLocation,
-  withRouter
-
+  Route
 } from "react-router-dom";
 
 import Acount_Info from './Component/SiteLayout/Acount'
@@ -23,6 +18,8 @@ import Login from './Component/SiteLayout/Login'
 import Register from './Component/SiteLayout/Resister'
 import SingleCourse from './Component/SiteLayout/SingleCourse'
 import Course from './Component/SiteLayout/Course';
+
+import http from './Component/services/config.json'
 import { useSelector } from 'react-redux';
 import { paginate } from './Component/utils/paginate';
 
@@ -32,7 +29,7 @@ function App() {
   }, []);
   
   const courses=useSelector(state=>state.courses)
-  const IndexCourses=paginate(courses,1,9);
+  const IndexCourses=paginate(courses,1,8);
   console.log(courses);
   return (
     <Fragment>
@@ -44,7 +41,7 @@ function App() {
         <Routes>
           <Route path='/about/Acount_Info' element={<Acount_Info />} />
           <Route path='/about/Acount_Edit' element={<Acount_Edit />} />
-          <Route path='/archive' element={<Archive />} />
+          <Route path='/archive' element={<Archive courses={paginate(courses,1,9)} http={http.toplearnapi}/>} />
           <Route path='/about/Lessen' element={<Lessen />} />
           <Route path='/about/Login' element={<Login />} />
           <Route path='/about/Register' element={<Register />} />

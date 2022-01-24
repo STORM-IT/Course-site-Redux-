@@ -2,16 +2,16 @@ import React, { Fragment } from 'react'
 import { Helmet } from 'react-helmet'
 import { Link } from 'react-router-dom'
 
-export default function Archive() {
+export default function Archive({ courses, http }) {
 
-  return (
-    <Fragment>
-        <Helmet>
-            <meta charSet="utf-8" />
+    return (
+        <Fragment>
+            <Helmet>
+                <meta charSet="utf-8" />
                 <title>تاپلرن | دوره ها</title>
                 <link rel="canonical" href="http://mysite.com/example" />
             </Helmet>
-                  <div className="main-menu">
+            <div className="main-menu">
                 <div className="container">
                     <nav>
                         <span className="responsive-sign"><i className="zmdi zmdi-menu"></i></span>
@@ -157,89 +157,17 @@ export default function Archive() {
 
                             <section className="terms-items">
                                 <div className="row">
+                                    {courses.map(course => (
 
-                                    <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12 term-col">
-                                        <article>
-                                            <a href="" className="img-layer"><img src="images/pic/1.jpg" /></a>
-                                            <h2><Link to="/singleCourse/TelegramRobot"> آموزش ساخت رباط تلگرام </Link></h2>
-                                            <span> رایگان </span>
-                                            <i>1:52:32</i>
-                                        </article>
-                                    </div>
-
-
-                                    <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12 term-col">
-                                        <article>
-                                            <a href="" className="img-layer"><img src="images/pic/2.jpg" /></a>
-                                            <h2><a href=""> آموزش متریال دیاین در زامارین </a></h2>
-                                            <span> رایگان </span>
-                                            <i>1:52:32</i>
-                                        </article>
-                                    </div>
-
-                                    <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12 term-col">
-                                        <article>
-                                            <a href="" className="img-layer"><img src="images/pic/3.jpg" /></a>
-                                            <h2><a href=""> آموزش متریال دیاین در زامارین </a></h2>
-                                            <span> 150.000 تومان </span>
-                                            <i>1:52:32</i>
-                                        </article>
-                                    </div>
-
-                                    <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12 term-col">
-                                        <article>
-                                            <a href="" className="img-layer"><img src="images/pic/4.jpg" /></a>
-                                            <h2><a href=""> آموزش متریال دیاین در زامارین </a></h2>
-                                            <span> رایگان </span>
-                                            <i>1:52:32</i>
-                                        </article>
-                                    </div>
-
-                                    <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12 term-col">
-                                        <article>
-                                            <a href="" className="img-layer"><img src="images/pic/5.jpg" /></a>
-                                            <h2><a href=""> آموزش متریال دیاین در زامارین </a></h2>
-                                            <span> 15.000 تومان </span>
-                                            <i>1:52:32</i>
-                                        </article>
-                                    </div>
-
-                                    <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12 term-col">
-                                        <article>
-                                            <a href="" className="img-layer"><img src="images/pic/6.jpg" /></a>
-                                            <h2><a href=""> آموزش متریال دیاین در زامارین </a></h2>
-                                            <span> رایگان </span>
-                                            <i>1:52:32</i>
-                                        </article>
-                                    </div>
-
-                                    <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12 term-col">
-                                        <article>
-                                            <a href="" className="img-layer"><img src="images/pic/7.jpg" /></a>
-                                            <h2><a href=""> آموزش متریال دیاین در زامارین </a></h2>
-                                            <span> 20.000 تومان </span>
-                                            <i>1:52:32</i>
-                                        </article>
-                                    </div>
-
-                                    <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12 term-col">
-                                        <article>
-                                            <a href="" className="img-layer"><img src="images/pic/8.jpg" /></a>
-                                            <h2><a href=""> آموزش متریال دیاین در زامارین </a></h2>
-                                            <span> 75.000 تومان </span>
-                                            <i>1:52:32</i>
-                                        </article>
-                                    </div>
-
-
-                                    <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12 term-col">
-                                        <article>
-                                            <a href="" className="img-layer"><img src="images/pic/4.jpg" /></a>
-                                            <h2><a href=""> آموزش متریال دیاین در زامارین </a></h2>
-                                            <span> 75.000 تومان </span>
-                                            <i>1:52:32</i>
-                                        </article>
-                                    </div>
+                                        <div key={course._id} className="col-lg-4 col-md-4 col-sm-6 col-xs-12 term-col">
+                                            <article>
+                                                <Link to={http + "/" + course._id} className="img-layer"><img src="images/pic/1.jpg" /></Link>
+                                                <h2><Link to={http + "/" + course._id}>{course.title}</Link></h2>
+                                                <span>{course.price}</span>
+                                                <i>1:52:32</i>
+                                            </article>
+                                        </div>
+                                    ))}
 
                                 </div>
 
@@ -268,6 +196,6 @@ export default function Archive() {
                     </div>
                 </section>
             </div>
-    </Fragment>
-  )
+        </Fragment>
+    )
 }
