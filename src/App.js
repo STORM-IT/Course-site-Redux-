@@ -23,11 +23,17 @@ import Navbar from './Component/SiteLayout/Navbar';
 import http from './Component/services/config.json'
 import { useSelector } from 'react-redux';
 import { paginate } from './Component/utils/PaginateIndexSlice';
+// import { decodeToken } from './Component/utils/decodeToken';
 
 function App() {
   useEffect(() => {
     require("./Component/JsFile/script")
-
+    var jwt = require('jsonwebtoken');
+    // const token=localStorage.getItem("token")
+    // if(token){
+      // const decode=decodeToken(token);
+      // console.log(decodeToken);
+    // }
   }, []);
   // const user =jwt.decode(localStorage.getItem("token"));
   // console.log(user);
