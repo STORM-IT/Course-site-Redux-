@@ -175,7 +175,7 @@ export default function Archive({ http }) {
                                         <div key={course._id} className="col-lg-4 col-md-4 col-sm-6 col-xs-12 term-col">
                                             <article>
                                                 <Link to={http + "/" + course._id} className="img-layer"><img src={http+"/"+course.imageUrl} /></Link>
-                                                <h2><Link to={()=>dispatch( singleCourse(course._id))} >{course.title}</Link></h2>
+                                                <h2><Link to={"/archive/singleCourse"} onClick={()=>dispatch( singleCourse(course._id))} >{course.title}</Link></h2>
                                                 <span>{course.price}</span>
                                                 <button onClick={()=>dispatch(singleCourse(course._id))} >{course.title}</button>
                                                 <i>1:52:32</i>

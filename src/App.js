@@ -35,8 +35,8 @@ function App() {
     <Fragment>
       <Router>
         <Routes>
-          <Route path='/*' exact element={<Head_Home />} />
-          <Route path='/about/*' element={<Header />} />
+          <Route path='/archive/*'  element={<Header />} />
+          <Route path='/' exact element={<Head_Home />} />
         </Routes>
         <Routes>
           <Route path='/about/Acount_Info' element={<Acount_Info />} />
@@ -45,7 +45,7 @@ function App() {
           <Route path='/about/Lessen' element={<Lessen />} />
           <Route path='/about/Login' element={<Login />} />
           <Route path='/about/Register' element={<Register />} />
-          <Route path='/singleCourse/TelegramRobot' element={<SingleCourse />} />
+          <Route path='/archive/singleCourse' element={<SingleCourse http={http.toplearnapi}/>} />
           <Route path='/' element={<Course courses={IndexCourses}/>} />
         </Routes>
         <Footer />
