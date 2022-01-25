@@ -21,22 +21,31 @@ import Course from './Component/SiteLayout/Course';
 import Navbar from './Component/SiteLayout/Navbar';
 
 import http from './Component/services/config.json'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { paginate } from './Component/utils/PaginateIndexSlice';
-// import { decodeToken } from './Component/utils/decodeToken';
+import { clearUser, setUser } from './Component/Redux/Action/Use';
+import { decodeToken } from './Component/utils/decodeToken';
+
 
 function App() {
+  const dispatch =useDispatch();
   useEffect(() => {
     require("./Component/JsFile/script")
-    var jwt = require('jsonwebtoken');
-    // const token=localStorage.getItem("token")
-    // if(token){
-      // const decode=decodeToken(token);
-      // console.log(decodeToken);
-    // }
+    
+    const token=localStorage.getItem("token")
+    if(token){
+      const decoded=decodeToken(token)
+      dispatch(setUser(decoded.user));
+      // console.log("decoded exp is : " + decoded.exp + "and date now is : " + Date.now()/1000);
+      if (decoded.exp < Math.floor(Date.now()/1000)) {
+        dispatch(clearUser())
+        localStorage.removeItem('token')
+        
+      } else {
+        
+      }
+    }
   }, []);
-  // const user =jwt.decode(localStorage.getItem("token"));
-  // console.log(user);
 
   const courses = useSelector(state => state.courses)
   const IndexCourses = paginate(courses, 1, 8);

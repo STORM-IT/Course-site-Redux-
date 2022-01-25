@@ -1,5 +1,5 @@
-import jwt from 'jsonwebtoken'
+import jwt_decode from 'jwt-decode'
 
 export const decodeToken=token=>{
-    return jwt.decode(token,{complete:true})
+    return jwt_decode(token)
 }
