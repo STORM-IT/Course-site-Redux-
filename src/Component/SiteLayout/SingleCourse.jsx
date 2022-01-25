@@ -1,11 +1,15 @@
 import React, { Fragment } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { singleCourse } from "../Redux/Action/Course";
+import _ from 'lodash'
+import httpService from "../services/httpService";
 // import Pagination from "./Pagination";
 
-const SingleCourse = () => {
+const SingleCourse = ({http}) => {
     const course= useSelector(state=>state.course)
-    const dispatch=useDispatch();
+    const commentLength = _.range(5)
+    // const dispatch=useDispatch();
+    
     return (
         <Fragment>
             <section className="term-content">
@@ -177,6 +181,7 @@ const SingleCourse = () => {
                                 </form>
 
                                 <div className="comment-list">
+                                    {commentLength.map(()=>(
                                     <div className="comment-row">
                                         <img src="../images/pic/avatar.jpg" />
                                         <div className="left-col">
@@ -192,70 +197,9 @@ const SingleCourse = () => {
                                             </p>
                                         </div>
                                     </div>
+                                    ))}
 
-                                    <div className="comment-row">
-                                        <img src="../images/pic/avatar.jpg" />
-                                        <div className="left-col">
-                                            <h3> میترا رحیمی </h3>
-                                            <span>12/03/1397</span>
-                                            <p>
-                                                لورم ایپسوم متن ساختگی با تولید
-                                                سادگی نامفهوم از صنعت چاپ و با
-                                                استفاده از طراحان گرافیک است.
-                                                چاپگرها و متون بلکه روزنامه و
-                                                مجله در ستون و سطرآنچنان که لازم
-                                                است
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <div className="comment-row">
-                                        <img src="../images/pic/avatar.jpg" />
-                                        <div className="left-col">
-                                            <h3> میترا رحیمی </h3>
-                                            <span>12/03/1397</span>
-                                            <p>
-                                                لورم ایپسوم متن ساختگی با تولید
-                                                سادگی نامفهوم از صنعت چاپ و با
-                                                استفاده از طراحان گرافیک است.
-                                                چاپگرها و متون بلکه روزنامه و
-                                                مجله در ستون و سطرآنچنان که لازم
-                                                است
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <div className="comment-row">
-                                        <img src="../images/pic/avatar.jpg" />
-                                        <div className="left-col">
-                                            <h3> میترا رحیمی </h3>
-                                            <span>12/03/1397</span>
-                                            <p>
-                                                لورم ایپسوم متن ساختگی با تولید
-                                                سادگی نامفهوم از صنعت چاپ و با
-                                                استفاده از طراحان گرافیک است.
-                                                چاپگرها و متون بلکه روزنامه و
-                                                مجله در ستون و سطرآنچنان که لازم
-                                                است
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <div className="comment-row">
-                                        <img src="../images/pic/avatar.jpg" />
-                                        <div className="left-col">
-                                            <h3> میترا رحیمی </h3>
-                                            <span>12/03/1397</span>
-                                            <p>
-                                                لورم ایپسوم متن ساختگی با تولید
-                                                سادگی نامفهوم از صنعت چاپ و با
-                                                استفاده از طراحان گرافیک است.
-                                                چاپگرها و متون بلکه روزنامه و
-                                                مجله در ستون و سطرآنچنان که لازم
-                                                است
-                                            </p>
-                                        </div>
-                                    </div>
+                                   
 
                                     {/* <Pagination /> */}
                                 </div>
@@ -280,11 +224,11 @@ const SingleCourse = () => {
                                 </li>
                             </ul>
 
-                            <a href=""> شرکت در دوره : 450.000 تومان </a>
+                            <a href=""> شرکت در دوره : {course.price} تومان </a>
                         </div>
 
                         <article className="teacher-info">
-                            <img src="../images/pic/avatar.jpg" />
+                            <img src={http+"/"+course._id} />
                             <h2> مدرس : یونس قربانی </h2>
                             <p>
                                 لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از
@@ -298,7 +242,7 @@ const SingleCourse = () => {
                             <ul>
                                 <li>سطح دوره: پیشرفته</li>
                                 <li>وضعیت دوره: در حال برگزاری</li>
-                                <li>قیمت : 450,000 تومان</li>
+                                <li>قیمت : {course.price} تومان</li>
                                 <li>
                                     تاریخ ثبت این دوره : چهار شنبه ۲۱ شهریور
                                     ۱۳۹۷

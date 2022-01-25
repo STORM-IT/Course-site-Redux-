@@ -10,3 +10,11 @@ export const singleCourse=(id)=>{
         
     }
 }
+// import { getSingleCourse } from "./../../services/courseService";
+
+// export const getSingleCourse = courseId => {
+//     return async dispatch => {
+//         const { data } = await getSingleCourse(courseId);
+//         await dispatch({ type: "GET_COURSE", payload: data.course });
+//     };
+// };

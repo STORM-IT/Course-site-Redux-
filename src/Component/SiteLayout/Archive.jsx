@@ -5,10 +5,12 @@ import { Link } from 'react-router-dom'
 import Pagination from './Pagination'
 import {paginate} from './../utils/PaginateIndexSlice'
 import { singleCourse } from '../Redux/Action/Course'
+import { useDispatch } from 'react-redux'
 export default function Archive({ http }) {
 
     const [paginNumber,setPaginNumber] = useState(1);
     const courses_state=useSelector(state=>state.courses)
+    const dispatch=useDispatch()
 
     const courses=paginate(courses_state,paginNumber,9)
     // debugger
@@ -173,9 +175,9 @@ export default function Archive({ http }) {
                                         <div key={course._id} className="col-lg-4 col-md-4 col-sm-6 col-xs-12 term-col">
                                             <article>
                                                 <Link to={http + "/" + course._id} className="img-layer"><img src={http+"/"+course.imageUrl} /></Link>
-                                                <h2><Link to={singleCourse(course._id)} >{course.title}</Link></h2>
+                                                <h2><Link to={()=>dispatch( singleCourse(course._id))} >{course.title}</Link></h2>
                                                 <span>{course.price}</span>
-                                                <button onClick={singleCourse(course._id)} >{course.title}</button>
+                                                <button onClick={()=>dispatch(singleCourse(course._id))} >{course.title}</button>
                                                 <i>1:52:32</i>
                                             </article>
                                         </div>
