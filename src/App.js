@@ -22,6 +22,7 @@ import Course from './Component/SiteLayout/Course';
 import http from './Component/services/config.json'
 import { useSelector } from 'react-redux';
 import { paginate } from './Component/utils/PaginateIndexSlice';
+import Navbar from './Component/SiteLayout/Navbar';
 
 function App() {
   useEffect(() => {
@@ -38,6 +39,7 @@ function App() {
           <Route path='/archive/*'  element={<Header />} />
           <Route path='/' exact element={<Head_Home />} />
         </Routes>
+        <Navbar/>
         <Routes>
           <Route path='/about/Acount_Info' element={<Acount_Info />} />
           <Route path='/about/Acount_Edit' element={<Acount_Edit />} />
