@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
-import { withRouter, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { clearUser } from "../../actions/user";
-import { replace } from "lodash";
+import { clearUser } from "../../Redux/Action/Use";
 
-const Logout = ({ history }) => {
+const Logout = () => {
     const dispatch = useDispatch();
     const navigate=useNavigate();
     useEffect(() => {
@@ -16,4 +15,4 @@ const Logout = ({ history }) => {
     return null;
 };
 
-export default withRouter(Logout);
+export default Logout;
