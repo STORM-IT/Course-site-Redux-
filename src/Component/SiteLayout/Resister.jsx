@@ -52,7 +52,7 @@ export default function Resister() {
             if (validator.current.allValid()) {
 
 
-                const { status } = await registerUser(user);
+                const { status , token } = await registerUser(user);
                 if (status === 201) {
                     console.log("created");
                     toast.success('user created with the success 🤞', {
@@ -65,7 +65,8 @@ export default function Resister() {
                         progress: undefined,
                     });
                     Reset();
-                    navigate("/about/Login");
+                    localStorage.setItem("token",token)
+                    // navigate("/about/Login");
                     // navigate("/",{replace:true});
                     
 

@@ -40,7 +40,7 @@ export default function Login(props) {
             if (validator.current.allValid()) {
                 
                 setloading(true)
-                const { status, data } = await loginUser(user);
+                const { status, data , token } = await loginUser(user);
                 if (status === 200) {
                     toast.success('login seccess', {
                         position: "top-right",
@@ -55,8 +55,9 @@ export default function Login(props) {
                 console.log(data.token);
                 localStorage.setItem('token', data.token);
                 // history.replace('/');
-    
-                navigate('/', { replace: true })
+                
+                navigate('/')
+                // navigate('/', { replace: true })
                 setloading(false)
             }else{
                 validator.current.showMessages();

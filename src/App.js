@@ -4,7 +4,8 @@ import { ToastContainer } from 'react-toastify'
 import {
   BrowserRouter as Router,
   Routes,
-  Route
+  Route ,
+  Navigate
 } from "react-router-dom";
 // import {useNavigate} from 'react-router-dom'
 
@@ -26,17 +27,20 @@ import { useDispatch, useSelector } from 'react-redux';
 import { paginate } from './Component/utils/PaginateIndexSlice';
 import { clearUser, setUser } from './Component/Redux/Action/Use';
 import { decodeToken } from './Component/utils/decodeToken';
+import _ from 'lodash';
 
 
 function App() {
   const dispatch =useDispatch();
   // let navigatec = useNavigate();
+  const User=useSelector(state=>state.user)
   
   useEffect(() => {
     require("./Component/JsFile/script")
     
     const token=localStorage.getItem("token")
     if(token){
+      console.log(token);
       const decoded=decodeToken(token)
       // console.log("decoded exp is : " + decoded.exp + "and date now is : " + Date.now()/1000);
       if (decoded.exp < Math.floor(Date.now()/1000)) {
@@ -59,7 +63,12 @@ function App() {
       <Router>
         <Routes>
           <Route path='/about/*' element={<Header />} />
-          <Route path='/' exact element={<Head_Home />} />
+          <Route path='/as' exact element={<Head_Home />} />
+         
+        </Routes>
+        <Routes>
+          <Route path='/' exact element={<Navigate replace to="/as" />} />
+
         </Routes>
         <Navbar />
         <Routes>
@@ -70,7 +79,7 @@ function App() {
           <Route path='/about/Login' element={<Login />} />
           <Route path='/about/Register' element={<Register />} />
           <Route path='/archive/singleCourse' element={<SingleCourse http={http.toplearnapi} />} />
-          <Route path='/' element={<Course courses={IndexCourses} />} />
+          <Route path='/as' element={<Course courses={IndexCourses} />} />
         </Routes>
         <Footer />
       </Router>
