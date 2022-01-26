@@ -1,7 +1,13 @@
 import React, { Fragment } from 'react'
+import { useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import {Link} from 'react-router-dom'
+import {isEmpty} from 'lodash'
+import {clearUser} from '../Redux/Action/Use'
 
 export default function Header() {
+    const User=useSelector(state=>state.user)
+    const dispatch=useDispatch()
     return (
         <Fragment>
         <div className="landing-layer">
@@ -18,14 +24,20 @@ export default function Header() {
                         </div>
                         <div className="col-sm-6 col-xs-12">
                             <div className="clientarea">
-                                <div className="loggein ">
-                                    <i className="zmdi zmdi-account"></i><a href=""> ایمان مدائنی ، خوش آمدی </a>
-                                </div>
+                                {isEmpty(User)?(
+
                                 <div className="signin hidden">
                                     <i className="zmdi zmdi-account"></i>
-                                    <a href=""> ورود </a> /
-                                    <a href=""> عضویت </a>
+                                    <Link to="/about/Login"> ورود </Link> /
+                                    <Link to="/about/Register"> عضویت </Link>
                                 </div>
+                                ):(
+
+                                <div className="loggein ">
+                                    <i className="zmdi zmdi-account"></i><Link to="/about/Acount_Info">{User.fullname}</Link>{" / "}
+                                    <i className="zmdi zmdi-account"></i><Link to="/" onClick={()=>dispatch(clearUser())}>خروج از حساب کاربری</Link>
+                                </div>
+                                )}
                             </div>
                         </div>
                     </div>
