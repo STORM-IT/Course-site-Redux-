@@ -1,6 +1,6 @@
 import React, {useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { loginUser } from '../services/userServices'
+import { loginUser } from '../../services/userServices'
 import { toast } from 'react-toastify'
 import { useNavigate } from "react-router-dom";
 import SimpleReactValidator from 'simple-react-validator';

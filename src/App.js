@@ -16,7 +16,7 @@ import Footer from './Component/SiteLayout/Footer'
 import Header from './Component/SiteLayout/Header'
 import Head_Home from './Component/SiteLayout/Head_Home'
 import Lessen from './Component/SiteLayout/Lesson'
-import Login from './Component/SiteLayout/Login'
+import Login from './Component/SiteLayout/Login/Login'
 import Register from './Component/SiteLayout/Resister'
 import SingleCourse from './Component/SiteLayout/SingleCourse'
 import Course from './Component/SiteLayout/Course';
