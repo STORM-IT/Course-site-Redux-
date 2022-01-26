@@ -5,12 +5,16 @@ import { toast } from 'react-toastify'
 import { useNavigate } from "react-router-dom";
 import SimpleReactValidator from 'simple-react-validator';
 import { Helmet } from 'react-helmet';
+import { useDispatch } from 'react-redux';
+import { setUser } from '../../Redux/Action/Use';
+import { decodeToken } from '../../utils/decodeToken';
 
 export default function Login(props) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const[loading,setloading]=useState(false);
+    const dispatch = useDispatch()
+   
     // console.log(useNavigate)
     const style_validator={
         backgroundColor:"gray",borderRadius:'5px',color:'white',padding:'3px 10px'
@@ -39,7 +43,7 @@ export default function Login(props) {
         try {
             if (validator.current.allValid()) {
                 
-                setloading(true)
+
                 const { status, data , token } = await loginUser(user);
                 if (status === 200) {
                     toast.success('login seccess', {
@@ -54,11 +58,12 @@ export default function Login(props) {
                 }
                 console.log(data.token);
                 localStorage.setItem('token', data.token);
+                dispatch(setUser(decodeToken(data.token).user))
                 // history.replace('/');
                 
                 navigate('/')
                 // navigate('/', { replace: true })
-                setloading(false)
+
             }else{
                 validator.current.showMessages();
                 forceUpdate(1);

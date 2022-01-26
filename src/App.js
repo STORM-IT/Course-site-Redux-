@@ -28,6 +28,7 @@ import { paginate } from './Component/utils/PaginateIndexSlice';
 import { clearUser, setUser } from './Component/Redux/Action/Use';
 import { decodeToken } from './Component/utils/decodeToken';
 import _ from 'lodash';
+import Logout from './Component/SiteLayout/Login/Logout';
 
 
 function App() {
@@ -63,11 +64,11 @@ function App() {
       <Router>
         <Routes>
           <Route path='/about/*' element={<Header />} />
-          <Route path='/as' exact element={<Head_Home />} />
+          <Route path='/' exact element={<Head_Home />} />
+          <Route path='/Logout' exact element={_.isEmpty(User)?<Navigate to="/"/>:<Logout/>} />
          
         </Routes>
         <Routes>
-          <Route path='/' exact element={<Navigate replace to="/as" />} />
 
         </Routes>
         <Navbar />
@@ -79,7 +80,7 @@ function App() {
           <Route path='/about/Login' element={<Login />} />
           <Route path='/about/Register' element={<Register />} />
           <Route path='/archive/singleCourse' element={<SingleCourse http={http.toplearnapi} />} />
-          <Route path='/as' element={<Course courses={IndexCourses} />} />
+          <Route path='/' element={<Course courses={IndexCourses} />} />
         </Routes>
         <Footer />
       </Router>

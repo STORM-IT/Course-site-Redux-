@@ -67,7 +67,7 @@ export default function Resister() {
                     Reset();
                     localStorage.setItem("token",token)
                     // navigate("/about/Login");
-                    // navigate("/",{replace:true});
+                    navigate("/about/Login",{replace:true});
                     
 
                 } 
