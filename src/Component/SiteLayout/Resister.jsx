@@ -65,7 +65,8 @@ export default function Resister() {
                         progress: undefined,
                     });
                     Reset();
-                    navigate("/",{replace:true});
+                    navigate("/about/Login");
+                    // navigate("/",{replace:true});
                     
 
                 } 
