@@ -6,6 +6,7 @@ import {
   Routes,
   Route
 } from "react-router-dom";
+// import {useNavigate} from 'react-router-dom'
 
 import Acount_Info from './Component/SiteLayout/Acount'
 import Acount_Edit from './Component/SiteLayout/Acount_Create'
@@ -29,22 +30,25 @@ import { decodeToken } from './Component/utils/decodeToken';
 
 function App() {
   const dispatch =useDispatch();
+  // let navigatec = useNavigate();
+  
   useEffect(() => {
     require("./Component/JsFile/script")
     
     const token=localStorage.getItem("token")
     if(token){
       const decoded=decodeToken(token)
-      dispatch(setUser(decoded.user));
       // console.log("decoded exp is : " + decoded.exp + "and date now is : " + Date.now()/1000);
       if (decoded.exp < Math.floor(Date.now()/1000)) {
         dispatch(clearUser())
         localStorage.removeItem('token')
         
       } else {
+        dispatch(setUser(decoded.user))
         
       }
     }
+    // navigate("/archive")
   }, []);
 
   const courses = useSelector(state => state.courses)
