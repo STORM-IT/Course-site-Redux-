@@ -73,7 +73,7 @@ function App() {
         </Routes>
         <Navbar />
         <Routes>
-          <Route path='/about/Acount_Info' element={<Acount_Info />} />
+          <Route path='/about/Acount_Info' element={<Acount_Info http={http}/>} />
           <Route path='/about/Acount_Edit' element={<Acount_Edit />} />
           <Route path='/about/archive' element={<Archive courses={paginate(courses, 1, 12)} http={http.toplearnapi} />} />
           <Route path='/about/Lessen' element={<Lessen />} />
