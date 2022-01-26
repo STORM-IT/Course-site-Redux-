@@ -1,6 +1,12 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { BrowserRouter as Router,Link } from 'react-router-dom'
+import _ from 'lodash'
+import { useDispatch } from 'react-redux'
+import { clearUser } from '../Redux/Action/Use'
 export default function Head_Home() {
+    const User=useSelector(state=>state.user)
+    const dispatch=useDispatch()
     return (
         // <Router>
 
@@ -21,15 +27,21 @@ export default function Head_Home() {
                         </div>
                         <div className="col-sm-6 col-xs-12">
                             <div className="clientarea">
-                                <div className="loggein hidden">
-                                    <i className="zmdi zmdi-account"></i>
-                                    <a href=""> ایمان مدائنی ، خوش آمدی </a>
-                                </div>
+                                {_.isEmpty(User)?(
+
                                 <div className="signin ">
                                     <i className="zmdi zmdi-account"></i>
                                     <Link to="/about/Login"> ورود </Link> /
                                     <Link to="/about/Register"> عضویت </Link>
                                 </div>
+                                ):(
+
+                                <div className="loggein">
+                                    <i className="zmdi zmdi-account"></i>
+                                    <Link to="/about/Acount_Info">{User.fullname}</Link> {" / "}
+                                    <Link to="/" onClick={()=>dispatch(clearUser())}>خروج از حساب کاربری</Link>
+                                </div>
+                                )}
                             </div>
                         </div>
                     </div>

@@ -5,6 +5,7 @@ export const setUser=(user)=>{
 }
 export const clearUser=()=>{
     return async dispatch=>{
+        localStorage.removeItem("token");
         await dispatch({type:"CLEAR_USER" , payload:{}})
     }
 }
