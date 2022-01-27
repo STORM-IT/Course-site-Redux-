@@ -37,7 +37,7 @@ function App() {
   const User=useSelector(state=>state.user)
   
   useEffect(() => {
-    // require("./Component/JsFile/script")
+    require("./Component/JsFile/script")
     console.log("App start");
     
     const token=localStorage.getItem("token")
