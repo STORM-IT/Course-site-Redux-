@@ -936,8 +936,8 @@ main#home-page{
 }
 .term-categories .switch-field label {
     background-color: #fff;
-    float: right;
     color: #333;
+    float: right;
     display: inline-block;
     font-size: 13px;
     font-weight: normal;
