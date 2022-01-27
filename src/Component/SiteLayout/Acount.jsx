@@ -1,11 +1,13 @@
-import React ,{Fragment} from 'react'
+import React ,{Fragment, useEffect} from 'react'
 import { useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
-
-export default function Acount({http}) {
+import { Link , Navigate} from 'react-router-dom'
+import {isEmpty} from 'lodash'
+export default function Acount() {
     
     const User=useSelector(state=>state.user)
     // console.log(User);
+
+    if(isEmpty(User)) return <Navigate to="/"/>
   return (
     <Fragment>
             <div className="container">

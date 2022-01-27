@@ -37,7 +37,8 @@ function App() {
   const User=useSelector(state=>state.user)
   
   useEffect(() => {
-    require("./Component/JsFile/script")
+    // require("./Component/JsFile/script")
+    console.log("App start");
     
     const token=localStorage.getItem("token")
     if(token){
@@ -73,7 +74,7 @@ function App() {
         </Routes>
         <Navbar />
         <Routes>
-          <Route path='/about/Acount_Info' element={<Acount_Info http={http}/>} />
+          <Route path='/about/Acount_Info' element={<Acount_Info/>} />
           <Route path='/about/Acount_Edit' element={<Acount_Edit />} />
           <Route path='/about/archive' element={<Archive courses={paginate(courses, 1, 12)} http={http.toplearnapi} />} />
           <Route path='/about/Lessen' element={<Lessen />} />
