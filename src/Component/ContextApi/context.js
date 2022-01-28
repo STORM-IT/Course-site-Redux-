@@ -1,7 +1,7 @@
 import { createContext } from "react";
 
 export const context=createContext({
-fullname:"",
+fullname:"2",
 setFullname:()=>{},
 email:"",
 setEmail:()=>{},

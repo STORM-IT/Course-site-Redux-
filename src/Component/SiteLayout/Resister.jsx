@@ -1,94 +1,14 @@
 import axios from 'axios';
-import React, { useRef, useState } from 'react'
-import {useNavigate} from 'react-router-dom'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { toast } from 'react-toastify';
-import { registerUser } from '../services/userServices'
-import SimpleReactValidator from 'simple-react-validator'
 import { Helmet } from 'react-helmet';
-// import { Sugar } from "react-preloaders";
-// import {Cube} from 'react-preloaders'
+import { context } from '../ContextApi/context';
+
 export default function Resister() {
-    const [fullname, setFullname] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
 
-    const [policy,setPolicy]=useState();
-    const [loading, setLoading] = useState(false);
-    
-    const navigate=useNavigate();
+    const RegisterContext=useContext(context);
 
-    const [, forceUpdate] = useState();
-    const Reset = () => {
-        setFullname("");
-        setEmail("");
-        setPassword("");
-
-    }
-    // SimpleReactValidator.addLocale('klingon', {
-    //     // accepted: 'Hab SoSlI’ Quch!',
-    //     // email: 'Heghlu’meH QaQ jajvam'
-    //     required: "لطفا فیلد را خالی نگذارید",
-    //         // min: "not less than 5 character",
-    //         email: "your email is not correct"
-    //   });
-    const validator = useRef(new SimpleReactValidator({
-        messages: {
-            required: "لطفا فیلد را خالی نگذارید",
-            min: "not less than 5 character",
-            email: "your email is not correct"
-        },
-        element: message => <div style={{ color: "red" }}>{message}</div>
-    }))
-    const handleSubmit = async event => {
-        event.preventDefault();
-        const user = {
-            fullname,
-            email,
-            password
-        };
-
-        try {
-            if (validator.current.allValid()) {
-
-
-                const { status , token } = await registerUser(user);
-                if (status === 201) {
-                    console.log("created");
-                    toast.success('user created with the success 🤞', {
-                        position: "top-right",
-                        autoClose: 5000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                    });
-                    Reset();
-                    localStorage.setItem("token",token)
-                    // navigate("/about/Login");
-                    navigate("/about/Login",{replace:true});
-                    
-
-                } 
-            }else {
-                    validator.current.showMessages();
-                    forceUpdate(1);
-                }
-        } catch (ex) {
-            toast.error("Sorry, something went wrong 😐", {
-                position: "top-right",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            });
-            console.log(ex);
-        }
-    };
-
+    const {validator,setPassword,password,setEmail,email,setFullname,fullname,setPolicy,handleSubmit,policy} =RegisterContext;
 
     return (
         <main className="client-page">
@@ -108,7 +28,7 @@ export default function Resister() {
                 </div>
                 <div className="form-layer">
 
-                    <form action="" method="" onSubmit={handleSubmit}>
+                    <form action="" method="" onSubmit={e=>handleSubmit(e)}>
 
                         <div className="input-group">
                             <span className="input-group-addon" id="username"><i className="zmdi zmdi-account"></i></span>
@@ -135,13 +55,12 @@ export default function Resister() {
                             <Link to="/about/Login"> <i className="zmdi zmdi-account"></i> ورود به سایت </Link>
                         </div>
 
-                        <button className="btn btn-success" onClick={handleSubmit}> عضویت در سایت </button>
+                        <button className="btn btn-success" onClick={e=>handleSubmit(e)}> عضویت در سایت </button>
 
                     </form>
                 </div>
 
             </div>
-            {/* <ToastContainer/> */}
         </main>
     )
 }
