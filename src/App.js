@@ -31,6 +31,8 @@ import _ from 'lodash';
 import Logout from './Component/SiteLayout/Login/Logout';
 
 
+
+
 function App() {
   const dispatch =useDispatch();
   // let navigatec = useNavigate();
@@ -62,7 +64,7 @@ function App() {
   // console.log(courses);
   return (
     <Fragment>
-      <Router>
+      {/* <Router> */}
         <Routes>
           <Route path='/about/*' element={<Header />} />
           <Route path='/' exact element={<Head_Home />} />
@@ -84,7 +86,7 @@ function App() {
           <Route path='/' element={<Course courses={IndexCourses} />} />
         </Routes>
         <Footer />
-      </Router>
+      {/* </Router> */}
       <ToastContainer />
     </Fragment>
   );
