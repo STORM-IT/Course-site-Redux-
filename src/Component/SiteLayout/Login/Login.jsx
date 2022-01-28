@@ -1,90 +1,28 @@
-import React, {useRef, useState } from 'react'
+import React, { useContext, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { loginUser } from '../../services/userServices'
-import { toast } from 'react-toastify'
-import { useNavigate } from "react-router-dom";
-import SimpleReactValidator from 'simple-react-validator';
 import { Helmet } from 'react-helmet';
-import { useDispatch } from 'react-redux';
-import { setUser } from '../../Redux/Action/Use';
-import { decodeToken } from '../../utils/decodeToken';
+import { context } from '../../ContextApi/context';
+import SimpleReactValidator from 'simple-react-validator';
 
-export default function Login(props) {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+export default function Login() {
+   
 
-    const dispatch = useDispatch()
+   const Context =useContext(context)
+   const {email,setEmail,password,validator,setPassword,handleLogin} =Context
    
     // console.log(useNavigate)
-    const style_validator={
-        backgroundColor:"gray",borderRadius:'5px',color:'white',padding:'3px 10px'
-    }
-    const validator = useRef(new SimpleReactValidator({
-        messages:{
-            email:"لطفا ایمیل معتبر وارد کنید",
-            min:"حروف وارد شده نباید کمتر از 5 حرف باشد",
-            required:"لطفا فیلد را پرکنید"
-        },
-        element:message=><div style={style_validator}>{message}</div>
-    }));
-    const [,forceUpdate]=useState();
 
-    const Reset = () => {
-        setEmail("");
-        setPassword("");
-    }
-    const navigate = useNavigate();
-    const handleLogin = async event => {
-        event.preventDefault();
-        const user = {
-            email, password
-        }
-
-        try {
-            if (validator.current.allValid()) {
-                
-
-                const { status, data , token } = await loginUser(user);
-                if (status === 200) {
-                    toast.success('login seccess', {
-                        position: "top-right",
-                        autoClose: 5000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                    });
-                }
-                console.log(data.token);
-                localStorage.setItem('token', data.token);
-                dispatch(setUser(decodeToken(data.token).user))
-                // history.replace('/');
-                
-                navigate('/')
-                // navigate('/', { replace: true })
-
-            }else{
-                validator.current.showMessages();
-                forceUpdate(1);
-            }
-
-
-
-
-        } catch {
-            toast.error('login filed', {
-                position: "top-right",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            });
-        }
-
-    }
+    
+    // const validator = useRef(new SimpleReactValidator({
+    //     messages:{
+    //         email:"لطفا ایمیل معتبر وارد کنید",
+    //         min:"حروف وارد شده نباید کمتر از 5 حرف باشد",
+    //         required:"لطفا فیلد را پرکنید"
+    //     },
+    //     element:message=><div style={style_validator}>{message}</div>
+    // }));
+console.log(validator);
+    
     return (
         <main className="client-page">
             <Helmet>
@@ -106,13 +44,13 @@ export default function Login(props) {
                             <input type="text" className="form-control" name='email' placeholder="ایمیل" aria-describedby="email-address" 
                             onChange={event => {setEmail(event.target.value); validator.current.showMessageFor('email')} } />
                         </div>
-                        {validator.current.message('email',email,'required|email')}
+                        {/* {validator.current.message('email',email,'required|email')} */}
                         <div className="input-group">
                             <span className="input-group-addon" id="password"><i className="zmdi zmdi-lock"></i></span>
                             <input type="text" className="form-control" name='password' placeholder="رمز عبور " aria-describedby="password"
                                 onChange={event => {setPassword(event.target.value);validator.current.showMessageFor('password')}} />
                         </div>
-                        {validator.current.message('password',password,'required|min:5')}
+                        {/* {validator.current.message('password',password,'required|min:5')} */}
                         <div className="remember-me">
                             <label><input type="checkbox" name="" />  مرا بخاطر بسپار </label>
                         </div>
