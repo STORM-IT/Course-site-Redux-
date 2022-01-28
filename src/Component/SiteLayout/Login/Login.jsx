@@ -8,21 +8,8 @@ export default function Login() {
    
 
    const Context =useContext(context)
-   const {email,setEmail,password,validator,setPassword,handleLogin} =Context
+   const {email,setEmail,validator,password,setPassword,handleLogin} =Context
    
-    // console.log(useNavigate)
-
-    
-    // const validator = useRef(new SimpleReactValidator({
-    //     messages:{
-    //         email:"لطفا ایمیل معتبر وارد کنید",
-    //         min:"حروف وارد شده نباید کمتر از 5 حرف باشد",
-    //         required:"لطفا فیلد را پرکنید"
-    //     },
-    //     element:message=><div style={style_validator}>{message}</div>
-    // }));
-console.log(validator);
-    
     return (
         <main className="client-page">
             <Helmet>
@@ -37,20 +24,20 @@ console.log(validator);
 
                 <div className="form-layer">
 
-                    <form action="" method="" onSubmit={handleLogin}>
+                    <form action="" method="" onSubmit={e=>handleLogin(e)}>
 
                         <div className="input-group">
                             <span className="input-group-addon" id="email-address"><i className="zmdi zmdi-email"></i></span>
                             <input type="text" className="form-control" name='email' placeholder="ایمیل" aria-describedby="email-address" 
                             onChange={event => {setEmail(event.target.value); validator.current.showMessageFor('email')} } />
                         </div>
-                        {/* {validator.current.message('email',email,'required|email')} */}
+                        {validator.current.message('email',email,'required|email')}
                         <div className="input-group">
                             <span className="input-group-addon" id="password"><i className="zmdi zmdi-lock"></i></span>
                             <input type="text" className="form-control" name='password' placeholder="رمز عبور " aria-describedby="password"
                                 onChange={event => {setPassword(event.target.value);validator.current.showMessageFor('password')}} />
                         </div>
-                        {/* {validator.current.message('password',password,'required|min:5')} */}
+                        {validator.current.message('password',password,'required|min:5')}
                         <div className="remember-me">
                             <label><input type="checkbox" name="" />  مرا بخاطر بسپار </label>
                         </div>
@@ -60,7 +47,7 @@ console.log(validator);
                             <Link to="/about/Register"> <i className="zmdi zmdi-account"></i> عضویت در سایت </Link>
                         </div>
 
-                        <button className="btn btn-success" onClick={handleLogin}> ورود به سایت </button>
+                        <button className="btn btn-success" onClick={e=>handleLogin(e)}> ورود به سایت </button>
 
                     </form>
                 </div>
