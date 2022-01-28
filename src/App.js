@@ -4,7 +4,7 @@ import { ToastContainer } from 'react-toastify'
 import {
   BrowserRouter as Router,
   Routes,
-  Route ,
+  Route,
   Navigate
 } from "react-router-dom";
 // import {useNavigate} from 'react-router-dom'
@@ -34,26 +34,26 @@ import Logout from './Component/SiteLayout/Login/Logout';
 
 
 function App() {
-  const dispatch =useDispatch();
+  const dispatch = useDispatch();
   // let navigatec = useNavigate();
-  const User=useSelector(state=>state.user)
-  
+  const User = useSelector(state => state.user)
+
   useEffect(() => {
     require("./Component/JsFile/script")
     console.log("App start");
-    
-    const token=localStorage.getItem("token")
-    if(token){
+
+    const token = localStorage.getItem("token")
+    if (token & token != undefined) {
       console.log(token);
-      const decoded=decodeToken(token)
+      const decoded = decodeToken(token)
       // console.log("decoded exp is : " + decoded.exp + "and date now is : " + Date.now()/1000);
-      if (decoded.exp < Math.floor(Date.now()/1000)) {
+      if (decoded.exp < Math.floor(Date.now() / 1000)) {
         dispatch(clearUser())
         localStorage.removeItem('token')
-        
+
       } else {
         dispatch(setUser(decoded.user))
-        
+
       }
     }
     // navigate("/archive")
@@ -65,27 +65,27 @@ function App() {
   return (
     <Fragment>
       {/* <Router> */}
-        <Routes>
-          <Route path='/about/*' element={<Header />} />
-          <Route path='/' exact element={<Head_Home />} />
-          <Route path='/Logout' exact element={_.isEmpty(User)?<Navigate to="/"/>:<Logout/>} />
-         
-        </Routes>
-        <Routes>
+      <Routes>
+        <Route path='/about/*' element={<Header />} />
+        <Route path='/' exact element={<Head_Home />} />
+        <Route path='/Logout' exact element={_.isEmpty(User) ? <Navigate to="/" /> : <Logout />} />
 
-        </Routes>
-        <Navbar />
-        <Routes>
-          <Route path='/about/Acount_Info' element={<Acount_Info/>} />
-          <Route path='/about/Acount_Edit' element={<Acount_Edit />} />
-          <Route path='/about/archive' element={<Archive courses={paginate(courses, 1, 12)} http={http.toplearnapi} />} />
-          <Route path='/about/Lessen' element={<Lessen />} />
-          <Route path='/about/Login' element={<Login />} />
-          <Route path='/about/Register' element={<Register />} />
-          <Route path='/archive/singleCourse' element={<SingleCourse http={http.toplearnapi} />} />
-          <Route path='/' element={<Course courses={IndexCourses} />} />
-        </Routes>
-        <Footer />
+      </Routes>
+      <Routes>
+
+      </Routes>
+      <Navbar />
+      <Routes>
+        <Route path='/about/Acount_Info' element={<Acount_Info />} />
+        <Route path='/about/Acount_Edit' element={<Acount_Edit />} />
+        <Route path='/about/archive' element={<Archive courses={paginate(courses, 1, 12)} http={http.toplearnapi} />} />
+        <Route path='/about/Lessen' element={<Lessen />} />
+        <Route path='/about/Login' element={<Login />} />
+        <Route path='/about/Register' element={<Register />} />
+        <Route path='/archive/singleCourse' element={<SingleCourse http={http.toplearnapi} />} />
+        <Route path='/' element={<Course courses={IndexCourses} />} />
+      </Routes>
+      <Footer />
       {/* </Router> */}
       <ToastContainer />
     </Fragment>

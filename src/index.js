@@ -10,14 +10,13 @@ import UserContext from './Component/ContextApi/userContext';
 
 
 render(
-    <UserContext>
-
     <BrowserRouter>
         <Provider store={store}>
-            <App />
+            <UserContext>
+                <App />
+            </UserContext>
         </Provider>
     </BrowserRouter>
-    </UserContext>
     , document.getElementById('root'));
 
 
