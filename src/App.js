@@ -30,37 +30,40 @@ import { decodeToken } from './Component/utils/decodeToken';
 import _ from 'lodash';
 import Logout from './Component/SiteLayout/Login/Logout';
 import Progress from 'react-progress-2'
+import { checkId } from './Component/utils/checkFormatId';
 
 
 function App() {
   const dispatch = useDispatch();
   const User = useSelector(state => state.user)
-
   useEffect(() => {
     require("./Component/JsFile/script")
+    // debugger
     console.log("App start");
-
     const token = localStorage.getItem("token")
-    if (token & token != undefined) {
+
+    if (token != undefined) {
       console.log(token);
       const decoded = decodeToken(token)
       // console.log("decoded exp is : " + decoded.exp + "and date now is : " + Date.now()/1000);
+      const checkFID=checkId.test(decoded.user.userId);
       if (decoded.exp < Math.floor(Date.now() / 1000)) {
         dispatch(clearUser())
         localStorage.removeItem('token')
-
+        
       } else {
         dispatch(setUser(decoded.user))
-
+        
       }
     }
     // navigate("/archive")
   }, []);
-
+  
   const courses = useSelector(state => state.courses)
   const IndexCourses = paginate(courses, 1, 8);
   // dispatch(showLoading())
-  // console.log(courses);
+
+  
   console.log(window.location.href);
   return (
     <Fragment>

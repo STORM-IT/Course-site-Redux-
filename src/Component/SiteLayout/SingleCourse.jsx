@@ -3,13 +3,19 @@ import { useDispatch, useSelector } from "react-redux";
 import { singleCourse } from "../Redux/Action/Course";
 import _ from 'lodash'
 import httpService from "../services/httpService";
+import { checkId } from "../utils/checkFormatId";
+import { Navigate } from "react-router";
 // import Pagination from "./Pagination";
 
 const SingleCourse = ({http}) => {
     const course= useSelector(state=>state.course)
     const commentLength = _.range(5)
     // const dispatch=useDispatch();
+debugger
+    if(!checkId(course._id)) {
 
+        return <Navigate to={'/'}/>
+    }
     return (
         <Fragment>
             <section className="term-content">
