@@ -12,11 +12,12 @@ import Progress from "react-progress-2";
 
 export default function UserContext({ children }) {
     const [fullname, setFullname] = useState("");
-    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("")
     const [policy, setPolicy] = useState();
+    const [email, setEmail] = useState("");
     const [, forceUpdate] = useState();
     const navigate = useNavigate();
+
     const Reset = () => {
         setFullname("");
         setEmail("");

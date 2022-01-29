@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react'
+import React, { Fragment, useContext, useEffect } from 'react'
 import { ToastContainer } from 'react-toastify'
 
 import {
@@ -32,7 +32,6 @@ import Logout from './Component/SiteLayout/Login/Logout';
 import Progress from 'react-progress-2'
 
 
-
 function App() {
   const dispatch = useDispatch();
   const User = useSelector(state => state.user)
@@ -62,14 +61,15 @@ function App() {
   const IndexCourses = paginate(courses, 1, 8);
   // dispatch(showLoading())
   // console.log(courses);
+  console.log(window.location.href);
   return (
     <Fragment>
       <Progress.Component/>
       {/* <Router> */}
       <Routes>
-        <Route path='/about/*' element={<Header />} />
         <Route path='/' exact element={<Head_Home />} />
         <Route path='/Logout' exact element={_.isEmpty(User) ? <Navigate to="/" /> : <Logout />} />
+        <Route path='/*' element={<Header />} />
 
       </Routes>
       <Routes>
@@ -85,7 +85,11 @@ function App() {
         <Route path='/about/Register' element={<Register />} />
         <Route path='/archive/singleCourse' element={<SingleCourse http={http.toplearnapi} />} />
         <Route path='/' element={<Course courses={IndexCourses} />} />
+        <Route path='*' element={ <img src='./images/404/404.png'/>} /> 
       </Routes>
+      <Routes>
+      {/* <Route path='/' element={<Course courses={IndexCourses} />} /> */}
+</Routes>
       <Footer />
       {/* </Router> */}
       <ToastContainer />

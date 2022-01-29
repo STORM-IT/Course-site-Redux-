@@ -9,6 +9,8 @@ export const context = createContext({
     setPassword: () => { },
     policy: "",
     setPolicy: () => { },
+    pageNotFound:true,
+    setPageNotFound:()=>{},
     validator: null,
     handleClearState: () => { },
     handleLogin: () => { },
