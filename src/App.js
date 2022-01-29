@@ -29,14 +29,12 @@ import { clearUser, setUser } from './Component/Redux/Action/Use';
 import { decodeToken } from './Component/utils/decodeToken';
 import _ from 'lodash';
 import Logout from './Component/SiteLayout/Login/Logout';
-import { LoadingBar } from 'react-redux-loading-bar';
-
+import Progress from 'react-progress-2'
 
 
 
 function App() {
   const dispatch = useDispatch();
-  // let navigatec = useNavigate();
   const User = useSelector(state => state.user)
 
   useEffect(() => {
@@ -62,9 +60,11 @@ function App() {
 
   const courses = useSelector(state => state.courses)
   const IndexCourses = paginate(courses, 1, 8);
+  // dispatch(showLoading())
   // console.log(courses);
   return (
     <Fragment>
+      <Progress.Component/>
       {/* <Router> */}
       <Routes>
         <Route path='/about/*' element={<Header />} />
@@ -89,7 +89,6 @@ function App() {
       <Footer />
       {/* </Router> */}
       <ToastContainer />
-      <LoadingBar/>
     </Fragment>
   );
 }

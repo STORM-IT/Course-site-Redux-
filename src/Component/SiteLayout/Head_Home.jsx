@@ -4,16 +4,25 @@ import { BrowserRouter as Router,Link } from 'react-router-dom'
 import _ from 'lodash'
 import { useDispatch } from 'react-redux'
 import { clearUser } from '../Redux/Action/Use'
+
+
+
+
+
+// import LoadingBar  from 'react-redux-loading-bar'
 export default function Head_Home() {
     const User=useSelector(state=>state.user)
     const dispatch=useDispatch()
+
     return (
         // <Router>
 
     
         
         <div className="landing-layer">
+            
             <div className="container">
+            
                 <nav>
                     <div className="row">
                         <div className="col-sm-6 col-xs-12">

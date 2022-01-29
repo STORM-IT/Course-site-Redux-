@@ -8,6 +8,7 @@ import { loginUser, registerUser } from '../services/userServices';
 import { decodeToken } from '../utils/decodeToken';
 import { context } from './context';
 import { toastify } from '../utils/toastOption'
+import Progress from "react-progress-2";
 
 export default function UserContext({ children }) {
     const [fullname, setFullname] = useState("");
@@ -45,22 +46,24 @@ export default function UserContext({ children }) {
         try {
             if (validator.current.allValid()) {
 
-
+         
+                Progress.show()
                 const { status, data, token } = await loginUser(user);
                 if (status === 200) {
                     toastify("SUCCESS", 'login seccess')
-                }
-                console.log(data.token);
-                localStorage.setItem('token', data.token);
-                dispatch(setUser(decodeToken(data.token).user))
-                // history.replace('/');
 
-                navigate('/')
-                // navigate('/', { replace: true })
-                console.log("login success");
+                    localStorage.setItem('token', data.token);
+                    dispatch(setUser(decodeToken(data.token).user))
+                    
+                    navigate('/')
+                    // navigate('/', { replace: true })
+                    Progress.hide()
+                    Reset()
+                }
             } else {
                 validator.current.showMessages();
                 forceUpdate(1);
+                Progress.hide()
             }
 
 
@@ -88,17 +91,16 @@ export default function UserContext({ children }) {
             debugger
             if (validator.current.allValid()) {
 
-
+                Progress.show()
                 const { status, token } = await registerUser(user);
                 if (status === 201) {
                     console.log("created");
                     toastify("SUCCESS", "user created with the success 🤞")
-                    Reset();
                     localStorage.setItem("token", token)
                     // navigate("/about/Login");
                     navigate("/about/Login", { replace: true });
-
-
+                    Progress.hide()
+                    Reset();
                 }
             } else {
                 validator.current.showMessages();
@@ -106,8 +108,8 @@ export default function UserContext({ children }) {
             }
         } catch (ex) {
             toastify("ERROR", "Sorry, something went wrong 😐")
-
             console.log(ex);
+            Progress.hide()
         }
     };
 

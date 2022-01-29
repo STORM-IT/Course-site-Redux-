@@ -27,7 +27,6 @@ export default function Resister() {
                     {/* {<Cube/>} */}
                 </div>
                 <div className="form-layer">
-
                     <form action="" method="" onSubmit={e=>handleSubmit(e)}>
 
                         <div className="input-group">

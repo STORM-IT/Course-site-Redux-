@@ -4,10 +4,10 @@ import App from './App';
 import 'react-toastify/dist/ReactToastify.css';
 import { Provider } from 'react-redux';
 import { store } from './Component/Redux/Store/index'
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter } from 'react-router-dom';
 import UserContext from './Component/ContextApi/userContext';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "react-progress-2/main.css"
 
 render(
     <BrowserRouter>
