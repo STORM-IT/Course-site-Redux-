@@ -6,6 +6,8 @@ import Pagination from './Pagination'
 import {paginate} from './../utils/PaginateIndexSlice'
 import { singleCourse } from '../Redux/Action/Course'
 import { useDispatch } from 'react-redux'
+import {Img} from 'react-image'
+import { Spin } from "react-cssfx-loading";
 import Navbar from './Navbar'
 export default function Archive({ http }) {
 
@@ -138,7 +140,8 @@ export default function Archive({ http }) {
 
                                         <div key={course._id} className="col-lg-4 col-md-4 col-sm-6 col-xs-12 term-col">
                                             <article>
-                                                <Link to={"/archive/singleCourse"} className="img-layer" onClick={()=>dispatch(singleCourse(course._id))}><img src={http+"/"+course.imageUrl}/></Link>
+                                                {/* <Link to={"/archive/singleCourse"} className="img-layer" onClick={()=>dispatch(singleCourse(course._id))}><Img src={http+"/"+course.imageUrl} loader={<div style={{width:"100px",textAlign:"center"}} className=""><Spin/></div>}/></Link> */}
+                                                <Link to={"/archive/singleCourse"} className="img-layer" onClick={()=>dispatch(singleCourse(course._id))}><Img src={http+"/"+course.imageUrl} loader={<div className="d-flex justify-content-center"><Spin/></div>}/></Link>
                                                 <h2><Link to={"/archive/singleCourse"} onClick={()=>dispatch( singleCourse(course._id))} >{course.title}</Link></h2>
                                                 <span>{course.price}</span>
                                                 <i>1:52:32</i>
@@ -152,6 +155,8 @@ export default function Archive({ http }) {
                     </div>
                 </section>
             </div>
+            
+                                {/* <Zoom/> */}
         </Fragment>
     )
 }
