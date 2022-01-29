@@ -29,6 +29,7 @@ import { clearUser, setUser } from './Component/Redux/Action/Use';
 import { decodeToken } from './Component/utils/decodeToken';
 import _ from 'lodash';
 import Logout from './Component/SiteLayout/Login/Logout';
+import { LoadingBar } from 'react-redux-loading-bar';
 
 
 
@@ -88,6 +89,7 @@ function App() {
       <Footer />
       {/* </Router> */}
       <ToastContainer />
+      <LoadingBar/>
     </Fragment>
   );
 }
