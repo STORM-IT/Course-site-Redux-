@@ -6,7 +6,7 @@ const Course = ({ courses }) => {
         <section className="terms-items">
             <header>
                 <h2> آخرین دوره های تاپ لرن </h2>
-                <Link to="/about/archive"> مشاهده همه دوره ها </Link>
+                <Link to="/archive"> مشاهده همه دوره ها </Link>
             </header>
             <div className="row">
                 {courses.map(course => (
