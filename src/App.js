@@ -71,82 +71,47 @@ function App() {
 
 
 
-  
+
     <Fragment>
- 
 
 
 
-<Routes>
-  <Route path="/*"  element={(
-      <Fragment>
+
+
+      {/* <Navbar /> */}
       <Routes>
-             <Route path='/*' exact element={<Head_Home />} />
-      </Routes>
-        <Routes>
-        <Route path="/e" element={(
-          <Routes>
-            <Route path='/e/archive' element={<Archive courses={paginate(courses, 1, 12)} http={http.toplearnapi} />} />
-            <Route path='/e/Register' element={<Register />} />
-          </Routes>
-          )} />
-          <Route path="/*" element={(
+        <Route path="/" element={(
+          <Fragment>
+
             <Routes>
-              <Route path='/archive' element={<Archive courses={paginate(courses, 1, 12)} http={http.toplearnapi} />} />
-              <Route path='/Register' element={<Register />} />
+              <Route path='/Logout' exact element={_.isEmpty(User) ? <Navigate to="/" /> : <Logout />} />
+              <Route path='/' exact element={<Head_Home />} />
+              <Route path='/*' element={<Header />} />
             </Routes>
-          )} />
-      </Routes>
-      <Routes>
-      <Route path='/*' element={<Footer />} />
-      </Routes>
-      </Fragment>
-      
-  )}/>
-</Routes>
-
-
-      {/* </Router> */}
-    {/* </Fragment> */}
-
-     {/* </Router> */}
-
-
-    
-
-        
-           {/* <Navbar />
-          <Routes>
-
-           <Route path="/" >
-             <Route path='/Logout' exact element={_.isEmpty(User) ? <Navigate to="/" /> : <Logout />} />
-             <Route path='/*' element={<Header />} />
-             <Route path='/' exact element={<Head_Home />} />
-           </Route>
-           <Route>
-             <Route path='/Login' element={<Login />} />
-             <Route path='/Acount_Info' element={<Acount_Info />} />
-             <Route path='/archive' element={<Archive courses={paginate(courses, 1, 12)} http={http.toplearnapi} />} />
-             <Route path='/Acount_Edit' element={<Acount_Edit />} />
-             <Route path='/Lessen' element={<Lessen />} />
-             <Route path='/Register' element={<Register />} />
-             <Route path='/archive/singleCourse' element={<SingleCourse http={http.toplearnapi} />} />
-             <Route path='/' element={<Course courses={IndexCourses} />} />
-             <Route path='*' element={<img src='./images/404/404.png' />} />
-             <Route>
-             </Route>
-           </Route>
-           <Route>
-             <Route path='/*' element={<Footer />} />
-           </Route>
-          </Routes> */}
- 
-
-
-
-
-
-
+            <Routes>
+            <Route path='/' exact element={<Course courses={IndexCourses} />} />
+            <Route path='/Login' element={<Login />} />
+            <Route path='/Acount_Info' element={<Acount_Info />} />
+            <Route path='/archive' element={<Archive courses={paginate(courses, 1, 12)} http={http.toplearnapi} />} />
+            <Route path='/Acount_Edit' element={<Acount_Edit />} />
+            <Route path='/Lessen' element={<Lessen />} />
+            <Route path='/Register' element={<Register />} />
+            <Route path='/archive/singleCourse' element={<SingleCourse http={http.toplearnapi} />} />
+            <Route path='*' element={<img src='./images/404/404.png' />} />
+            </Routes>
+            <Routes>
+              <Route path='/*' element={<Footer />} />
+            </Routes>
+          </Fragment>
+        )} />
+        <Route path="/admin/*" element={(
+          <Fragment>
+            <Routes>
+              <Route />
+            </Routes>
+          </Fragment>
+        )} />
+        </Routes>
       <Progress.Component />
       <ToastContainer />
     </Fragment>
