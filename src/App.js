@@ -80,9 +80,8 @@ function App() {
 
       {/* <Navbar /> */}
       <Routes>
-        <Route path="/" element={(
+        <Route path="/*" element={(
           <Fragment>
-
             <Routes>
               <Route path='/Logout' exact element={_.isEmpty(User) ? <Navigate to="/" /> : <Logout />} />
               <Route path='/' exact element={<Head_Home />} />
