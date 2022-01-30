@@ -40,14 +40,14 @@ export default function Head_Home() {
 
                                 <div className="signin ">
                                     <i className="zmdi zmdi-account"></i>
-                                    <Link to="/about/Login"> ورود </Link> /
-                                    <Link to="/about/Register"> عضویت </Link>
+                                    <Link to="/Login"> ورود </Link> /
+                                    <Link to="/Register"> عضویت </Link>
                                 </div>
                                 ):(
 
                                 <div className="loggein">
                                     <i className="zmdi zmdi-account"></i>
-                                    <Link to="/about/Acount_Info">{User.fullname}</Link> {" / "}
+                                    <Link to="/Acount_Info">{User.fullname}</Link> {" / "}
                                     <Link to="/Logout" onClick={()=>dispatch(clearUser())}>خروج از حساب کاربری</Link>
                                 </div>
                                 )}

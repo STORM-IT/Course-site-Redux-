@@ -51,7 +51,7 @@ export default function Resister() {
                         {validator.current.message('policy',policy,'required')}
                         <div className="link">
                             <a href=""> <i className="zmdi zmdi-assignment"></i> قوانین و مقررات سایت !</a>
-                            <Link to="/about/Login"> <i className="zmdi zmdi-account"></i> ورود به سایت </Link>
+                            <Link to="/Login"> <i className="zmdi zmdi-account"></i> ورود به سایت </Link>
                         </div>
 
                         <button className="btn btn-success" onClick={e=>handleSubmit(e)}> عضویت در سایت </button>

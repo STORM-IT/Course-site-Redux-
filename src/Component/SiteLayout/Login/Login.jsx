@@ -43,7 +43,7 @@ export default function Login() {
 
                         <div className="link">
                             <a href=""> <i className="zmdi zmdi-lock"></i> رمز عبور خود را فراموش کرده ام !</a>
-                            <Link to="/about/Register"> <i className="zmdi zmdi-account"></i> عضویت در سایت </Link>
+                            <Link to="/Register"> <i className="zmdi zmdi-account"></i> عضویت در سایت </Link>
                         </div>
 
                         <button className="btn btn-success" onClick={e => handleLogin(e)}> ورود به سایت </button>
