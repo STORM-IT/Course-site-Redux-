@@ -99,7 +99,7 @@ export default function UserContext({ children }) {
                     toastify("SUCCESS", "user created with the success 🤞")
                     localStorage.setItem("token", token)
                     // navigate("/about/Login");
-                    navigate("/about/Login", { replace: true });
+                    navigate("/Login", { replace: true });
                     Progress.hide()
                     Reset();
                 }
