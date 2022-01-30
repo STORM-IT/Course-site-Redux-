@@ -68,35 +68,28 @@ function App() {
 
   console.log(window.location.href);
   return (
-
-
-
-
     <Fragment>
-
-
-
-
-
-      {/* <Navbar /> */}
       <Routes>
         <Route path="/*" element={(
           <Fragment>
             <Routes>
-              <Route path='/Logout' exact element={_.isEmpty(User) ? <Navigate to="/" /> : <Logout />} />
               <Route path='/' exact element={<Head_Home />} />
+              <Route path='/Logout' exact element={_.isEmpty(User) ? <Navigate to="/" /> : <Logout />} />
               <Route path='/*' element={<Header />} />
             </Routes>
             <Routes>
-            <Route path='/' exact element={<Course courses={IndexCourses} />} />
-            <Route path='/Login' element={<Login />} />
-            <Route path='/Acount_Info' element={<Acount_Info />} />
-            <Route path='/archive' element={<Archive courses={paginate(courses, 1, 12)} http={http.toplearnapi} />} />
-            <Route path='/Acount_Edit' element={<Acount_Edit />} />
-            <Route path='/Lessen' element={<Lessen />} />
-            <Route path='/Register' element={<Register />} />
-            <Route path='/archive/singleCourse' element={<SingleCourse http={http.toplearnapi} />} />
-            <Route path='*' element={<img src='./images/404/404.png' />} />
+            <Route path="/*" element={<Navbar />}/>
+            </Routes>
+            <Routes>
+              <Route path='/' exact element={<Course courses={IndexCourses} />} />
+              <Route path='/Login' element={<Login />} />
+              <Route path='/Acount_Info' element={<Acount_Info />} />
+              <Route path='/archive' element={<Archive courses={paginate(courses, 1, 12)} http={http.toplearnapi} />} />
+              <Route path='/Acount_Edit' element={<Acount_Edit />} />
+              <Route path='/Lessen' element={<Lessen />} />
+              <Route path='/Register' element={<Register />} />
+              <Route path='/archive/singleCourse' element={<SingleCourse http={http.toplearnapi} />} />
+              <Route path='*' element={<img src='./images/404/404.png' />} />
             </Routes>
             <Routes>
               <Route path='/*' element={<Footer />} />
@@ -110,7 +103,7 @@ function App() {
             </Routes>
           </Fragment>
         )} />
-        </Routes>
+      </Routes>
       <Progress.Component />
       <ToastContainer />
     </Fragment>
