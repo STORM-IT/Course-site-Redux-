@@ -5,7 +5,7 @@ import Helmet from "react-helmet";
 import AdminTopNav from "./AdminTopNav";
 import AdminSidebar from "./AdminSidebar";
 
-const PrivateLayout = ({ children }) => {
+const PrivateLayout = ({ children , location }) => {
     const user = useSelector((state) => state.user);
     return (
         <div id="wrapper">
@@ -24,7 +24,7 @@ const PrivateLayout = ({ children }) => {
 
                 <AdminTopNav user={user} />
 
-                <AdminSidebar />
+                <AdminSidebar location={location} />
             </nav>
             <div id="page-wrapper">{children}</div>
         </div>
