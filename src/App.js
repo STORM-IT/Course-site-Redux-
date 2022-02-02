@@ -31,11 +31,14 @@ import _ from 'lodash';
 import Logout from './Component/SiteLayout/Login/Logout';
 import Progress from 'react-progress-2'
 import { checkId } from './Component/utils/checkFormatId';
+import PrivateLayout from './Component/SiteLayout/admin/PrivateLayout';
+import Dashboard from './Component/SiteLayout/admin/Dashboard';
 
 
 function App() {
   const dispatch = useDispatch();
   const User = useSelector(state => state.user)
+
   useEffect(() => {
     require("./Component/JsFile/script")
     // debugger
@@ -80,13 +83,16 @@ function App() {
 
       {/* <Navbar /> */}
       <Routes>
-        <Route path="/dashboard/*" element={(
-          <Fragment>
-            <Routes>
-              {/* <Route path="dashboard/courses"/> */}
-              <Route path="dashboard"/>
-            </Routes>
-          </Fragment>
+        <Route path="/dashboard" element={(
+          <PrivateLayout>
+            <Dashboard courses={courses}/>
+          </PrivateLayout>
+          // <Fragment>
+          //   <Routes>
+          //     {/* <Route path="dashboard/courses"/> */}
+          //     <Route path="dashboard"/>
+          //   </Routes>
+          // </Fragment>
         )} />
         <Route path="/*" element={(
           <Fragment>
