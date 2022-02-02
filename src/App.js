@@ -5,7 +5,8 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Navigate
+  Navigate,
+  useParams
 } from "react-router-dom";
 // import {useNavigate} from 'react-router-dom'
 
@@ -68,8 +69,9 @@ function App() {
   const IndexCourses = paginate(courses, 1, 8);
   // dispatch(showLoading())
 
-
-  console.log(window.location.href);
+  const {date} = useParams();
+  console.log(date);
+  console.log(window.location.pathname);
   return (
 
 
@@ -83,8 +85,8 @@ function App() {
 
       {/* <Navbar /> */}
       <Routes>
-        <Route path="/dashboard" element={(
-          <PrivateLayout>
+        <Route path="/dashboard/*" element={(
+          <PrivateLayout location={window.location.pathname}>
             <Dashboard courses={courses}/>
           </PrivateLayout>
           // <Fragment>
