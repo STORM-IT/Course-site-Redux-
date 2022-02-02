@@ -1,14 +1,14 @@
 import React from "react";
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const AdminSidebar = ({ location }) => {
     return (
         <div>
             <ul className="nav navbar-nav side-nav" style={{ height: "100vh" }}>
                 <li
-                    className={
-                        location.pathname === "/dashboard" ? "active" : ""
-                    }
+                    // className={
+                    //     location.pathname === "/dashboard" ? "active" : ""
+                    // }
                 >
                     <Link to="/dashboard">
                         <i className="fa fa-fw fa-dashboard"></i> داشبورد
@@ -16,11 +16,11 @@ const AdminSidebar = ({ location }) => {
                 </li>
 
                 <li
-                    className={
-                        location.pathname === "/dashboard/courses"
-                            ? "active"
-                            : ""
-                    }
+                    // className={
+                    //     location.pathname === "/dashboard/courses"
+                    //         ? "active"
+                    //         : ""
+                    // }
                 >
                     <Link to="/dashboard/courses">
                         <i className="fa fa-fw fa-graduation-cap"></i> دوره ها
@@ -31,4 +31,4 @@ const AdminSidebar = ({ location }) => {
     );
 };
 
-export default withRouter(AdminSidebar);
+export default AdminSidebar;
