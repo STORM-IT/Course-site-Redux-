@@ -80,7 +80,15 @@ function App() {
 
       {/* <Navbar /> */}
       <Routes>
-        <Route path="/" element={(
+        <Route path="/dashboard/*" element={(
+          <Fragment>
+            <Routes>
+              {/* <Route path="dashboard/courses"/> */}
+              <Route path="dashboard"/>
+            </Routes>
+          </Fragment>
+        )} />
+        <Route path="/*" element={(
           <Fragment>
 
             <Routes>
@@ -101,13 +109,6 @@ function App() {
             </Routes>
             <Routes>
               <Route path='/*' element={<Footer />} />
-            </Routes>
-          </Fragment>
-        )} />
-        <Route path="/admin/*" element={(
-          <Fragment>
-            <Routes>
-              <Route />
             </Routes>
           </Fragment>
         )} />

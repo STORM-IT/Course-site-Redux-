@@ -48,6 +48,10 @@ export default function Head_Home() {
                                 <div className="loggein">
                                     <i className="zmdi zmdi-account"></i>
                                     <Link to="/Acount_Info">{User.fullname}</Link> {" / "}
+                                    {User.isAdmin ?(
+                                        <Link to="/Acount_Info">{User.fullname}</Link> 
+                                    ):(null)}
+                                
                                     <Link to="/Logout" onClick={()=>dispatch(clearUser())}>خروج از حساب کاربری</Link>
                                 </div>
                                 )}
