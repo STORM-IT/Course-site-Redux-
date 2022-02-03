@@ -85,7 +85,7 @@ function App() {
 
       {/* <Navbar /> */}
       <Routes>
-        <Route path="/dashboard/*" element={(
+        <Route path="/Dashboard/*" element={(
           <PrivateLayout location={window.location.pathname}>
             <Dashboard courses={courses}/>
           </PrivateLayout>

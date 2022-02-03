@@ -11,7 +11,7 @@ const AdminTopNav = ({ user }) => {
                 </a>
                 <ul className="dropdown-menu">
                     <li>
-                        <Link to="/user-profile">
+                        <Link to="/Acount_Info">
                             <i className="fa fa-fw fa-user"></i> پروفایل
                         </Link>
                     </li>
