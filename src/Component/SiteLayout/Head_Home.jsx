@@ -50,7 +50,7 @@ export default function Head_Home() {
                                     <Link to="/Acount_Info">{User.fullname}</Link> {" / "}
                                     {!User.isAdmin ?(
                                         
-                                            <Link to="/Dashboard"> داشبورد  {" / "}</Link>
+                                            <Link to="/dashboard"> داشبورد  {" / "}</Link>
                                         
                                     ):(null)}
                                 
