@@ -69,69 +69,51 @@ function App() {
   const courses = useSelector(state => state.courses)
   const IndexCourses = paginate(courses, 1, 8);
   // dispatch(showLoading())
-
-  const {date} = useParams();
-  console.log(date);
   console.log(window.location.pathname);
+
   return (
 
-
-
-
     <Fragment>
+      
+          <Routes>
+            <Route path="/dashboard/*" element={(
+              <PrivateLayout location={window.location.pathname}>
+                <Routes>
+                  <Route path="/dashboard/*" element={(
+                    <ListCourse courses={courses} />
+                  )} />
+                  {/* <Route path="/dashboard" element={(
+                    <Dashboard courses={courses} />
+                  )} /> */}
 
-
-
-
-
-      {/* <Navbar /> */}
-      <Routes>
-        <Route path="/Dashboard/*" element={(
-          <PrivateLayout location={window.location.pathname}>
-            <Routes>
-              <Route path="/Dashboard/courses" element={(
-                <ListCourse courses={courses}/>
-              )} />
-              <Route path="/Dashboard" element={(
-                <Dashboard courses={courses}/>
-              )} />
-              
-            </Routes>
-          </PrivateLayout>
-
-         
-          // <Fragment>
-          //   <Routes>
-          //     {/* <Route path="dashboard/courses"/> */}
-          //     <Route path="dashboard"/>
-          //   </Routes>
-          // </Fragment>
-        )} />
-        <Route path="/*" element={(
-          <Fragment>
-
-            <Routes>
-              <Route path='/Logout' exact element={_.isEmpty(User) ? <Navigate to="/" /> : <Logout />} />
-              <Route path='/' exact element={<Head_Home />} />
-              <Route path='/*' element={<Header />} />
-            </Routes>
-            <Routes>
-            <Route path='/' exact element={<Course courses={IndexCourses} />} />
-            <Route path='/Login' element={<Login />} />
-            <Route path='/Acount_Info' element={<Acount_Info />} />
-            <Route path='/archive' element={<Archive courses={paginate(courses, 1, 12)} http={http.toplearnapi} />} />
-            <Route path='/Acount_Edit' element={<Acount_Edit />} />
-            <Route path='/Lessen' element={<Lessen />} />
-            <Route path='/Register' element={<Register />} />
-            <Route path='/archive/singleCourse' element={<SingleCourse http={http.toplearnapi} />} />
-            <Route path='*' element={<img src='./images/404/404.png' />} />
-            </Routes>
-            <Routes>
-              <Route path='/*' element={<Footer />} />
-            </Routes>
-          </Fragment>
-        )} />
-        </Routes>
+                </Routes>
+              </PrivateLayout>
+            )} />
+            <Route path="/*" element={(
+              <Fragment>
+                <Routes>
+                  <Route path='/Logout' exact element={_.isEmpty(User) ? <Navigate to="/" /> : <Logout />} />
+                  <Route path='/' exact element={<Head_Home />} />
+                  <Route path='/*' element={<Header />} />
+                </Routes>
+                <Routes>
+                  <Route path='/' exact element={<Course courses={IndexCourses} />} />
+                  <Route path='/Login' element={<Login />} />
+                  <Route path='/Acount_Info' element={<Acount_Info />} />
+                  <Route path='/archive' element={<Archive courses={paginate(courses, 1, 12)} http={http.toplearnapi} />} />
+                  <Route path='/Acount_Edit' element={<Acount_Edit />} />
+                  <Route path='/Lessen' element={<Lessen />} />
+                  <Route path='/Register' element={<Register />} />
+                  <Route path='/archive/singleCourse' element={<SingleCourse http={http.toplearnapi} />} />
+                  <Route path='*' element={<img src='./images/404/404.png' />} />
+                </Routes>
+                <Routes>
+                  <Route path='/*' element={<Footer />} />
+                </Routes>
+              </Fragment>
+            )} />
+          </Routes>
+        
       <Progress.Component />
       <ToastContainer />
     </Fragment>
