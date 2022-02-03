@@ -34,6 +34,7 @@ import Progress from 'react-progress-2'
 import { checkId } from './Component/utils/checkFormatId';
 import PrivateLayout from './Component/SiteLayout/admin/PrivateLayout';
 import Dashboard from './Component/SiteLayout/admin/Dashboard';
+import ListCourse from './Component/SiteLayout/Dashboard/ListCourse';
 
 
 function App() {
@@ -87,8 +88,18 @@ function App() {
       <Routes>
         <Route path="/Dashboard/*" element={(
           <PrivateLayout location={window.location.pathname}>
-            <Dashboard courses={courses}/>
+            <Routes>
+              <Route path="/Dashboard/courses" element={(
+                <ListCourse courses={courses}/>
+              )} />
+              <Route path="/Dashboard" element={(
+                <Dashboard courses={courses}/>
+              )} />
+              
+            </Routes>
           </PrivateLayout>
+
+         
           // <Fragment>
           //   <Routes>
           //     {/* <Route path="dashboard/courses"/> */}
