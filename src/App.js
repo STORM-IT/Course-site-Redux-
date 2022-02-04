@@ -74,21 +74,26 @@ function App() {
   return (
 
     <Fragment>
-      
+      {/* <Router> */}
+
           <Routes>
-            <Route path="/dashboard/*" element={(
+            {/* <Route path="/dashboard/*" element={(
               <PrivateLayout location={window.location.pathname}>
                 <Routes>
                   <Route path="/dashboard/*" element={(
                     <ListCourse courses={courses} />
-                  )} />
-                  {/* <Route path="/dashboard" element={(
+                    )} />
+                  <Route path="/dashboard" element={(
                     <Dashboard courses={courses} />
-                  )} /> */}
+                  )} />
 
                 </Routes>
-              </PrivateLayout>
-            )} />
+                </PrivateLayout>
+            )} /> */}
+            <Route path="dashboard" element={<PrivateLayout location={window.location.pathname}/>}>
+              <Route path="*"  element={<Dashboard courses={courses} />}/>
+              {/* <Route path="/" element={<ListCourse courses={courses} />}/> */}
+            </Route>
             <Route path="/*" element={(
               <Fragment>
                 <Routes>
@@ -113,6 +118,7 @@ function App() {
               </Fragment>
             )} />
           </Routes>
+            {/* </Router> */}
         
       <Progress.Component />
       <ToastContainer />
