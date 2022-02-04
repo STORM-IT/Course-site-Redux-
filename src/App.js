@@ -77,22 +77,9 @@ function App() {
       {/* <Router> */}
 
           <Routes>
-            {/* <Route path="/dashboard/*" element={(
-              <PrivateLayout location={window.location.pathname}>
-                <Routes>
-                  <Route path="/dashboard/*" element={(
-                    <ListCourse courses={courses} />
-                    )} />
-                  <Route path="/dashboard" element={(
-                    <Dashboard courses={courses} />
-                  )} />
-
-                </Routes>
-                </PrivateLayout>
-            )} /> */}
             <Route path="dashboard" element={<PrivateLayout location={window.location.pathname}/>}>
-              <Route path="*"  element={<Dashboard courses={courses} />}/>
-              {/* <Route path="/" element={<ListCourse courses={courses} />}/> */}
+              <Route path="courses" element={<ListCourse courses={courses} />}/>
+              <Route path=""  element={<Dashboard courses={courses} />}/>
             </Route>
             <Route path="/*" element={(
               <Fragment>

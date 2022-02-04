@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link ,Outlet } from "react-router-dom";
 import Helmet from "react-helmet";
 import AdminTopNav from "./AdminTopNav";
 import AdminSidebar from "./AdminSidebar";
@@ -10,6 +10,7 @@ const PrivateLayout = ({ children , location }) => {
     const user = useSelector((state) => state.user);
     const courses = useSelector(state=>state.courses)
 // console.log(location);
+console.log("private");
     return (
         <div id="wrapper">
             <Helmet>
@@ -29,8 +30,7 @@ const PrivateLayout = ({ children , location }) => {
 
                 <AdminSidebar location={location} />
             </nav>
-            
-            <div id="page-wrapper">{children}</div>
+            <div id="page-wrapper"> <Outlet/></div>
         </div>
     );
 };
