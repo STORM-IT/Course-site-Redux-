@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 
 const AdminTopNav = ({ user }) => {
     return (
-        <ul className="nav navbar-left top-nav">
+        <ul className="nav navbar-left top-nav m-0">
             <li className="dropdown">
                 <a href="#" className="dropdown-toggle" data-toggle="dropdown">
                     <i className="fa fa-user"> </i> {user.fullname}
-                    <b className="caret"></b>
+                    {/* <b className="caret"></b> */}
                 </a>
                 <ul className="dropdown-menu">
                     <li>

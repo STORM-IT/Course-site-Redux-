@@ -16,8 +16,9 @@ console.log("private");
             <Helmet>
                 <title>تاپلرن | داشبورد</title>
             </Helmet>
+            
             <nav
-                className="navbar navbar-inverse navbar-fixed-top"
+                className="navbar navbar-inverse navbar-fixed-top m-0"
                 role="navigation"
             >
                 <div className="navbar-header">
@@ -25,12 +26,10 @@ console.log("private");
                         داشبورد تاپلرن
                     </Link>
                 </div>
-
                 <AdminTopNav user={user} />
-
                 <AdminSidebar location={location} />
             </nav>
-            <div id="page-wrapper"> <Outlet/></div>
+            <div id="page-wrapper" className="mr-5"> <Outlet/></div>
         </div>
     );
 };
