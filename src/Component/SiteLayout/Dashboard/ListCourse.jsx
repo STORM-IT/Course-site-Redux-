@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react'
-import { Table } from 'react-bootstrap'
+import { Alert, Form, Table } from 'react-bootstrap'
 import { paginate } from '../../utils/PaginateIndexSlice';
 import Pagination from '../Pagination'
 // import {} from ''
@@ -14,6 +14,12 @@ export default function List_Course({ courses }) {
   const IndedCourses = paginate(courses, currentPage, 9)
   return (
     <Fragment>
+      <div className='alert alert-primary m-0 d-flex justify-content-between'>
+        <button className='btn btn-success btn-lg'>+ Create course</button>
+        <div className='w-25'>
+        <Form.Control type="text" className='text-left' placeholder='Search'/>
+        </div>
+      </div>
       <Table striped bordered hover variant='dark'>
         <thead>
           <tr>
