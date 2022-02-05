@@ -3,6 +3,31 @@ import { Button, Form, Offcanvas } from 'react-bootstrap';
 
 export default function CourseNewCanvas() {
     const [show, setShow] = useState(true);
+
+    const [title, setTitle] = useState();
+    const [price, setPrice] = useState();
+    const [info, setInfo] = useState();
+
+    const dispatch = useDispatch();
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        try {
+            let data = new FormData();
+            data.append("title", title);
+            data.append("price", Number.parseInt(price));
+            data.append("imageUrl", event.target.imageUrl.files[0]);
+            data.append("info", info);
+
+            //Dispatch
+            dispatch(createNewCourse(data));
+            closeDialog();
+        } catch (ex) {
+            console.log(ex);
+        }
+    };
+
     return (
         <Offcanvas show={show} onHide={() => setShow(false)} placement="end" scroll={false} backdrop={false}>
             <Offcanvas.Header closeButton>
