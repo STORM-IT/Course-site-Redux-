@@ -1,7 +1,11 @@
-import React, { Fragment, useState } from 'react'
-import { Alert, Form, Table } from 'react-bootstrap'
+import { render } from '@testing-library/react';
+import React, { Fragment, useContext, useState } from 'react'
+import { Alert, Button, Form, Offcanvas, Table } from 'react-bootstrap'
+import { context } from '../../ContextApi/context';
 import { paginate } from '../../utils/PaginateIndexSlice';
 import Pagination from '../Pagination'
+import CourseNewCanvas from './CourseNewCanvas';
+
 // import {} from ''
 
 export default function List_Course({ courses }) {
@@ -15,7 +19,7 @@ export default function List_Course({ courses }) {
   return (
     <Fragment>
       <div className='alert alert-primary m-0 d-flex justify-content-between'>
-        <button className='btn btn-success btn-lg'>+ Create course</button>
+        <button className='btn btn-success btn-lg' onClick={()=> render(<CourseNewCanvas/>) }>+ Create course</button>
         <div className='w-25'>
         <Form.Control type="text" className='text-left' placeholder='Search'/>
         </div>
