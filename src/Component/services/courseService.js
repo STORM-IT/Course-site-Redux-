@@ -4,6 +4,16 @@ import config from './config.json'
 export const getCourses=()=>{
     return http.get(`${config.toplearnapi}/api/courses`)
 }
-export const getSingleCourse=(id)=>{
-    return http.get(`${config.toplearnapi}/api/course/${id}`)
+export const getSingleCourse=(courseId)=>{
+    return http.get(`${config.toplearnapi}/api/course/${courseId}`)
+}
+
+export const newCourse=course=>{
+    return http.post(`${config.toplearnapi}/api/course`,course)
+}
+export const deleteCourse=courseId=>{
+    return http.post(`${config.toplearnapi}/api/course/${courseId}`)
+}
+export const updateCourse=(courseId,course)=>{
+    return http.post(`${config.toplearnapi}/api/course/${courseId}`,course)
 }
