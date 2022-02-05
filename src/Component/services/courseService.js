@@ -8,7 +8,7 @@ export const getSingleCourse=(courseId)=>{
     return http.get(`${config.toplearnapi}/api/course/${courseId}`)
 }
 
-export const newCourse=course=>{
+export const createCourse=course=>{
     return http.post(`${config.toplearnapi}/api/course`,course)
 }
 export const deleteCourse=courseId=>{
