@@ -1,4 +1,4 @@
-import { createCourse, getCourses } from './../../services/courseService'
+import { createCourse, getCourses,deleteCourse } from './../../services/courseService'
 import {toastify} from '../../utils/toastOption'
 export const getAllCouses = () => {
     return async dispatch=>{
@@ -19,3 +19,21 @@ export const createNewCourse = (course) => {
         });
     };
 };
+
+export const removeCourseTable=id=>{
+    return async (dispatch,getState)=>{
+        debugger
+        try{
+            const {status} = await deleteCourse(id)
+            if(status==200)toastify("SUCCESS","دوره با موفقیت حذف شد ");
+            await dispatch({
+                type: "REMOVE_COURSE",
+                payload: [...getState().courses],
+            });
+
+        }catch(ex){
+            console.log(ex);
+     
+        }
+    }
+}
