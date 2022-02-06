@@ -14,12 +14,13 @@ export default function List_Course({ courses }) {
   const setPagination = (current) => {
     setCurrentPage(current);
   }
-
+  const {showCanvas,setShowCanvas} = useContext(context);
   const IndedCourses = paginate(courses, currentPage, 9)
+  console.log("object");
   return (
     <Fragment>
       <div className='alert alert-primary m-0 d-flex justify-content-between'>
-        <button className='btn btn-success btn-lg' onClick={()=> render(<CourseNewCanvas/>) }>+ Create course</button>
+        <button className='btn btn-success btn-lg' onClick={()=> setShowCanvas(true) }>+ Create course</button>
         <div className='w-25'>
         <Form.Control type="text" className='text-left' placeholder='Search'/>
         </div>
@@ -52,7 +53,7 @@ export default function List_Course({ courses }) {
          <Pagination currentPage={currentPage} totallCoursesLength={courses.length} courseLength={9} setPagination={setPagination} />
         </div>
       </nav>
-      
+      {showCanvas?<CourseNewCanvas/>:null}
     </Fragment>
   )
 }
