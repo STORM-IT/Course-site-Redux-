@@ -1,7 +1,9 @@
 import { render } from '@testing-library/react';
 import React, { Fragment, useContext, useState } from 'react'
 import { Alert, Button, Form, Offcanvas, Table } from 'react-bootstrap'
+import { useDispatch } from 'react-redux';
 import { context } from '../../ContextApi/context';
+import { removeCourseTable } from '../../Redux/Action/Courses';
 import { paginate } from '../../utils/PaginateIndexSlice';
 import Pagination from '../Pagination'
 import CourseNewCanvas from './CourseNewCanvas';
@@ -16,6 +18,7 @@ export default function List_Course({ courses }) {
   }
   const {showCanvas,setShowCanvas} = useContext(context);
   const IndedCourses = paginate(courses, currentPage, 9)
+  const dispatch = useDispatch();
   console.log("object");
   return (
     <Fragment>
@@ -37,13 +40,13 @@ export default function List_Course({ courses }) {
         <tbody>
           {IndedCourses.map(course => (
 
-            <tr>
+            <tr key={course._id}>
               <td>{course.title}</td>
               <td>{course.price == 0 ? "رایگان" : course.price}</td>
               <td >
                 <button className='btn btn-warning btn-sm w-100 h-100'><h4>Edite</h4></button>
               </td>
-              <td><button className='btn btn-danger btn-sm w-100 h-100'><h4>Delete</h4> </button></td>
+              <td><button onClick={()=>dispatch(removeCourseTable(course._id))} className='btn btn-danger btn-sm w-100 h-100'>Delete</button></td>
             </tr>
           ))}
         </tbody>
