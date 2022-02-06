@@ -5,6 +5,8 @@ export const coursesReducer=(state=[],action)=>{
 
             case "ADD_COURSE":
                 return [...action.payload]
+            case "REMOVE_COURSE":
+                return [...action.payload]
         default:
             return state;
     }
