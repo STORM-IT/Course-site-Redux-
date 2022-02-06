@@ -9,16 +9,4 @@ export const singleCourse=(id)=>{
     }
 }
 
-export const newCourse=(title,info,price,image)=>{
-    return async dispatch=>{
-        const course={
-            title,
-            info,
-            price,
-            image,
-            id:Math.floor(Math.random()*1000)
-        }
-        const {data} = createCourse(course);
-        await dispatch({type:"CREATE_COURSE" , payload:data.course})
-    }
-}
+
