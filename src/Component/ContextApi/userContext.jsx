@@ -11,6 +11,8 @@ import { toastify } from '../utils/toastOption'
 import Progress from "react-progress-2";
 
 export default function UserContext({ children }) {
+    
+    const [showCanvas, setShowCanvas] = useState("");
     const [fullname, setFullname] = useState("");
     const [password, setPassword] = useState("")
     const [policy, setPolicy] = useState();
@@ -126,6 +128,8 @@ export default function UserContext({ children }) {
             setPassword,
             policy,
             setPolicy,
+            showCanvas,
+            setShowCanvas,
             validator,
             handleLogin,
             handleSubmit
