@@ -1,9 +1,10 @@
 import { render } from '@testing-library/react';
 import React, { Fragment, useContext, useState } from 'react'
+import { useEffect } from 'react';
 import { Alert, Button, Form, Offcanvas, Table } from 'react-bootstrap'
 import { useDispatch } from 'react-redux';
 import { context } from '../../ContextApi/context';
-import { removeCourseTable } from '../../Redux/Action/Courses';
+import { removeCourseTable, searchCourse } from '../../Redux/Action/Courses';
 import { paginate } from '../../utils/PaginateIndexSlice';
 import Pagination from '../Pagination'
 import CourseNewCanvas from './CourseNewCanvas';
@@ -12,13 +13,24 @@ import UpdateCourseCanvas from './updateCourseCanvas';
 
 export default function List_Course({ courses }) {
   const [currentPage, setCurrentPage] = useState(1);
+   const [Courses,setCourses]=useState(courses);
+   
+   const dispatch = useDispatch();
+
+   useEffect(() => {
+     setCourses(courses)
+   },[courses]);
 
   const setPagination = (current) => {
     setCurrentPage(current);
   }
   const {showCanvasCreate,setShowCanvasCreate,showCanvasUpdate,setShowCanvasUpdate,courseUpdate,setCourseUpdate} = useContext(context);
-  const IndedCourses = paginate(courses, currentPage, 9)
-  const dispatch = useDispatch();
+
+  const filteCourse=(character)=>{
+    
+    setCourses(courses.filter(course=>course.title.includes(character)))
+  }
+  const IndedCourses = paginate(Courses, currentPage, 9)
   console.log("object");
   const handle_show_update_course=(course)=>{
     setCourseUpdate(course)
@@ -29,7 +41,7 @@ export default function List_Course({ courses }) {
       <div className='alert alert-primary m-0 d-flex justify-content-between'>
         <button className='btn btn-success btn-lg' onClick={()=> setShowCanvasCreate(true) }>+ Create course</button>
         <div className='w-25'>
-        <Form.Control type="text" className='text-left' placeholder='Search'/>
+        <Form.Control type="text" className='text-left' onChange={(e)=>filteCourse(e.target.value)} placeholder='Search'/>
         </div>
       </div>
       <Table striped bordered hover variant='dark'>
@@ -57,7 +69,7 @@ export default function List_Course({ courses }) {
       </Table>
       <nav className="navbar fixed-bottom">
         <div className="container-fluid">
-         <Pagination currentPage={currentPage} totallCoursesLength={courses.length} courseLength={9} setPagination={setPagination} />
+         <Pagination currentPage={currentPage} totallCoursesLength={Courses.length} courseLength={9} setPagination={setPagination} />
         </div>
       </nav>
       {showCanvasCreate?<CourseNewCanvas/>:null}
