@@ -36,11 +36,14 @@ export default function UpdateCourseCanvas() {
         course.append("title",titleCourse)
         course.append("info",infoCourse)
         course.append("price",priceCourse)
-        if(event.target.imageUrl.file==undefined){
-          course.append("imageUrl" , event.target.imageUrl.file[0])
-        }else{
-          course.append("imageUrl" , imageUrlCourse)
-        }
+          
+          if(event.target.imageUrl.files[0]!=undefined){
+            course.append("imageUrl" , event.target.imageUrl.files[0])
+          }else{
+
+            course.append("imageUrl" , imageUrlCourse)
+          }
+       
         dispatch(updateCourseTable(courseId,course))
         setShowCanvasUpdate(false)
     }
@@ -62,7 +65,7 @@ export default function UpdateCourseCanvas() {
                 <Form.Control name='imageUrl'  aria-describedby='imageUrl' type="file" size="lg" /><br />
                 <Form.Label ><h4>توضیحات درس</h4></Form.Label>
                 <Form.Control name='info' value={infoCourse}  onChange={(e) => setInfoCourse(e.target.value)} as="textarea" aria-label="With textarea" /> <hr />
-                <Button type='submit' className='p-3 btn-success w-100' ><h4>ساخت دوره</h4></Button>
+                <Button type='submit' className='p-3 btn-success w-100' ><h4>ویرایش دوره</h4></Button>
             </Form.Group>
         </form>
     </Offcanvas.Body>

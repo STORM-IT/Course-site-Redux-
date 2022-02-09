@@ -44,7 +44,7 @@ export const updateCourseTable=(courseId,course)=>{
             if(status==200)toastify("SUCCESS","دوره با موفقیت ویرایش شد ");
             await dispatch({
                 type: "UPDATE_COURSE",
-                payload: {...getState().courses},
+                payload: [...getState().courses]
             });
         }catch(ex){
             console.log(ex);
