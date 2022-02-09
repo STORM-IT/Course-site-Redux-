@@ -12,7 +12,7 @@ export default function CourseNewCanvas() {
     const [price, setPrice] = useState();
     const [info, setInfo] = useState();
 
-    const { setShowCanvas } = useContext(context);
+    const { setShowCanvasCreate } = useContext(context);
 
     const dispatch = useDispatch();
 
@@ -29,7 +29,7 @@ export default function CourseNewCanvas() {
 
             //Dispatch
             dispatch(createNewCourse(data));
-            setShowCanvas(false);
+            setShowCanvasCreate(false);
 
         } catch (ex) {
             console.log(ex);
@@ -38,16 +38,16 @@ export default function CourseNewCanvas() {
 
     return (
         <Offcanvas show={show} onHide={() => setShow(false)} placement="end" scroll={false} backdrop={false}>
-            <Offcanvas.Header onClick={() => setShowCanvas(false)} closeButton>
+            <Offcanvas.Header onClick={() => setShowCanvasCreate(false)} closeButton>
                 <Offcanvas.Title><h2>ساخت دوره جدید</h2></Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
                 <form action="" onSubmit={(e) => handleSubmit(e)}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label ><h4>نام دوره</h4></Form.Label>
-                        <Form.Control name='title' onChange={(e) => setTitle(e.target.value)} size='lg' type="text" placeholder="title course" /> <br />
+                        <Form.Control name='title' aria-describedby='title' onChange={(e) => setTitle(e.target.value)} size='lg' type="text" placeholder="title course" /> <br />
                         <Form.Label ><h4>قیمت دوره</h4></Form.Label>
-                        <Form.Control name='price' onChange={(e) => setPrice(e.target.value)} size='lg' type="te" placeholder="title course" /> <br />
+                        <Form.Control name='price'  onChange={(e) => setPrice(e.target.value)} size='lg' type="te" placeholder="title course" /> <br />
                         <Form.Label><h4>انتخاب عکس دوره</h4></Form.Label>
                         <Form.Control name='imageUrl' aria-describedby='imageUrl' type="file" size="lg" /><br />
                         <Form.Label ><h4>توضیحات درس</h4></Form.Label>

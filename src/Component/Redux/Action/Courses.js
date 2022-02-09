@@ -1,5 +1,6 @@
-import { createCourse, getCourses,deleteCourse } from './../../services/courseService'
+import { createCourse, getCourses,deleteCourse,updateCourse } from './../../services/courseService'
 import {toastify} from '../../utils/toastOption'
+
 export const getAllCouses = () => {
     return async dispatch=>{
         const {data} =await getCourses();
@@ -20,20 +21,33 @@ export const createNewCourse = (course) => {
     };
 };
 
-export const removeCourseTable=id=>{
+export const removeCourseTable=courseId=>{
     return async (dispatch,getState)=>{
-        debugger
         try{
-            const {status} = await deleteCourse(id)
+            debugger
+            const {status } = await deleteCourse(courseId)
             if(status==200)toastify("SUCCESS","دوره با موفقیت حذف شد ");
             await dispatch({
                 type: "REMOVE_COURSE",
-                payload: [...getState().courses],
+                payload: {...getState().courses},
             });
-
         }catch(ex){
             console.log(ex);
-     
+        }
+    }
+}
+export const updateCourseTable=(courseId,course)=>{
+    return async (dispatch,getState)=>{
+        try{
+            debugger
+            const {status } = await updateCourse(courseId,course)
+            if(status==200)toastify("SUCCESS","دوره با موفقیت ویرایش شد ");
+            await dispatch({
+                type: "UPDATE_COURSE",
+                payload: {...getState().courses},
+            });
+        }catch(ex){
+            console.log(ex);
         }
     }
 }

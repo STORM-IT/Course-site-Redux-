@@ -7,7 +7,7 @@ import { removeCourseTable } from '../../Redux/Action/Courses';
 import { paginate } from '../../utils/PaginateIndexSlice';
 import Pagination from '../Pagination'
 import CourseNewCanvas from './CourseNewCanvas';
-
+import UpdateCourseCanvas from './updateCourseCanvas';
 // import {} from ''
 
 export default function List_Course({ courses }) {
@@ -16,14 +16,18 @@ export default function List_Course({ courses }) {
   const setPagination = (current) => {
     setCurrentPage(current);
   }
-  const {showCanvas,setShowCanvas} = useContext(context);
+  const {showCanvasCreate,setShowCanvasCreate,showCanvasUpdate,setShowCanvasUpdate,courseUpdate,setCourseUpdate} = useContext(context);
   const IndedCourses = paginate(courses, currentPage, 9)
   const dispatch = useDispatch();
   console.log("object");
+  const handle_show_update_course=(course)=>{
+    setCourseUpdate(course)
+    setShowCanvasUpdate(true)
+  }
   return (
     <Fragment>
       <div className='alert alert-primary m-0 d-flex justify-content-between'>
-        <button className='btn btn-success btn-lg' onClick={()=> setShowCanvas(true) }>+ Create course</button>
+        <button className='btn btn-success btn-lg' onClick={()=> setShowCanvasCreate(true) }>+ Create course</button>
         <div className='w-25'>
         <Form.Control type="text" className='text-left' placeholder='Search'/>
         </div>
@@ -44,7 +48,7 @@ export default function List_Course({ courses }) {
               <td>{course.title}</td>
               <td>{course.price == 0 ? "رایگان" : course.price}</td>
               <td >
-                <button className='btn btn-warning btn-sm w-100 h-100'><h4>Edite</h4></button>
+                <button onClick={()=>handle_show_update_course(course)} className='btn btn-warning btn-sm w-100 h-100'><h4>Edite</h4></button>
               </td>
               <td><button onClick={()=>dispatch(removeCourseTable(course._id))} className='btn btn-danger btn-sm w-100 h-100'>Delete</button></td>
             </tr>
@@ -56,7 +60,8 @@ export default function List_Course({ courses }) {
          <Pagination currentPage={currentPage} totallCoursesLength={courses.length} courseLength={9} setPagination={setPagination} />
         </div>
       </nav>
-      {showCanvas?<CourseNewCanvas/>:null}
+      {showCanvasCreate?<CourseNewCanvas/>:null}
+      {showCanvasUpdate?<UpdateCourseCanvas />:null}
     </Fragment>
   )
 }
