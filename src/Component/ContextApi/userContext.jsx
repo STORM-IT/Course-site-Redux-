@@ -15,6 +15,7 @@ export default function UserContext({ children }) {
     const [showCanvasCreate, setShowCanvasCreate] = useState(false);
     const [showCanvasUpdate, setShowCanvasUpdate] = useState(false);
     const [courseUpdate, setCourseUpdate] = useState({});
+    const [currentPage, setCurrentPage] = useState(1);
     const [fullname, setFullname] = useState("");
     const [password, setPassword] = useState("")
     const [policy, setPolicy] = useState();
@@ -117,8 +118,10 @@ export default function UserContext({ children }) {
             Progress.hide()
         }
     };
-
-
+    
+    const setPagination = (current) => {
+        setCurrentPage(current);
+      }
 
     return (
         <context.Provider value={{
@@ -136,6 +139,8 @@ export default function UserContext({ children }) {
             setShowCanvasUpdate,
             courseUpdate,
             setCourseUpdate,
+            currentPage,
+            setPagination,
             validator,
             handleLogin,
             handleSubmit
