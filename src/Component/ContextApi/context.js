@@ -17,6 +17,8 @@ export const context = createContext({
     setShowCanvasUpdate: () => { },
     courseUpdate:{},
     setCourseUpdate:()=>{},
+    currentPage:0,
+    setPagination:()=>{},
     validator: null,
     handleClearState: () => { },
     handleLogin: () => { },
