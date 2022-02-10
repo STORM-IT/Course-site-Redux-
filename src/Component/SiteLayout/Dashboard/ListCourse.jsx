@@ -15,6 +15,7 @@ export default function List_Course({ courses }) {
 
   const [Courses, setCourses] = useState(courses);
   const [Sort,setSort]=useState();
+  const [,updateForce]=useState();
 
   const dispatch = useDispatch();
 
@@ -23,24 +24,30 @@ export default function List_Course({ courses }) {
     
     debugger
     setCourses(courses)
-    switch (Sort) {
+    setCourses(courses)
+  }, [courses,Sort]);
+  // }, []);
+  
+  
+  const { showCanvasCreate, setShowCanvasCreate, showCanvasUpdate, setShowCanvasUpdate, courseUpdate, setCourseUpdate, setPagination, currentPage } = useContext(context);
+  const sortListCourse=sortType=>{
+    debugger
+    switch (sortType) {
       case "HIGH":
+        // Courses.sort(function(a, b){return   b.price - a.price})
         Courses.sort(function(a, b){return   b.price - a.price})
+        updateForce(1)
         break;
         case "LOW":
           Courses.sort(function(a, b){return a.price - b.price})
+          updateForce(2)
           break;
           
           default:
             break;
           }
-          setCourses(courses)
-  }, [courses,Sort]);
-  // }, []);
 
-  
-  const { showCanvasCreate, setShowCanvasCreate, showCanvasUpdate, setShowCanvasUpdate, courseUpdate, setCourseUpdate, setPagination, currentPage } = useContext(context);
-  
+  }
   const filteCourse = (character) => {
     
     setCourses(courses.filter(course => course.title.includes(character)))
@@ -64,10 +71,10 @@ export default function List_Course({ courses }) {
           </Dropdown.Toggle>
 
           <Dropdown.Menu variant="dark">
-            <Dropdown.Item onClick={()=>setSort("HIGH")}><h5>کم به زیاد</h5></Dropdown.Item>
-            <Dropdown.Item onClick={()=>setSort("LOW")}><h5>زیاد به کم</h5></Dropdown.Item>
+            <Dropdown.Item onClick={()=>sortListCourse("LOW")}><h5>کم به زیاد</h5></Dropdown.Item>
+            <Dropdown.Item onClick={()=>sortListCourse("HIGH")}><h5>زیاد به کم</h5></Dropdown.Item>
             <Dropdown.Divider />
-            <Dropdown.Item onClick={()=>setSort("")}><h5>بدون فیلتر</h5></Dropdown.Item>
+            <Dropdown.Item onClick={()=>sortListCourse("")}><h5>بدون فیلتر</h5></Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
 
