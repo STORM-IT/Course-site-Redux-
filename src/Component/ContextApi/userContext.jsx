@@ -9,6 +9,7 @@ import { decodeToken } from '../utils/decodeToken';
 import { context } from './context';
 import { toastify } from '../utils/toastOption'
 import Progress from "react-progress-2";
+import { createNewCourse } from '../Redux/Action/Courses';
 
 export default function UserContext({ children }) {
     
@@ -38,7 +39,9 @@ export default function UserContext({ children }) {
         messages: {
             email: "لطفا ایمیل معتبر وارد کنید",
             min: "حروف وارد شده نباید کمتر از 5 حرف باشد",
-            required: "لطفا فیلد را پرکنید"
+            required: "لطفا فیلد را پرکنید",
+            numeric:"لطفا عدد وارد کنید",
+
         },
         element: message => <div style={style_validator}>{message}</div>
     }));
@@ -123,6 +126,38 @@ export default function UserContext({ children }) {
         setCurrentPage(current);
       }
 
+
+      const [title, setTitle] = useState();
+    const [price, setPrice] = useState();
+    const [info, setInfo] = useState();
+
+      const handle_create_course = (event) => {
+        event.preventDefault();
+        if(validator.current.allValid()){
+
+            try {
+                debugger
+                let data = new FormData();
+                data.append("title", title);
+                data.append("price", Number.parseInt(price));
+                data.append("imageUrl", event.target.imageUrl.files[0]);
+                data.append("info", info);
+    
+                //Dispatch
+                dispatch(createNewCourse(data));
+                setShowCanvasCreate(false);
+    
+            } catch (ex) {
+                console.log(ex);
+            }
+        }else{
+            validator.current.showMessages();
+        }
+    };
+    const handle_validator=(nameInput)=>{
+        validator.current.showMessageFor(nameInput)
+    }
+
     return (
         <context.Provider value={{
             fullname,
@@ -142,8 +177,16 @@ export default function UserContext({ children }) {
             currentPage,
             setPagination,
             validator,
+            title,
+            setTitle,
+            price,
+            setPrice,
+            info,
+            setInfo,
             handleLogin,
-            handleSubmit
+            handleSubmit,
+            handle_create_course,
+            handle_validator
         }}>
             {children}
         </context.Provider>
