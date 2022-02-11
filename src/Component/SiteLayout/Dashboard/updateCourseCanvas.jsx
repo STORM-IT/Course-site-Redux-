@@ -31,6 +31,8 @@ export default function UpdateCourseCanvas() {
     
     const handleUpdateCourse=(event)=>{
       debugger
+      if(validator.current.allValid()){
+
         event.preventDefault();
         let course=new FormData();
         course.append("title",titleCourse)
@@ -46,6 +48,9 @@ export default function UpdateCourseCanvas() {
        
         dispatch(updateCourseTable(courseId,course))
         setShowCanvasUpdate(false)
+      }else{
+        validator.current.showMessages();
+      }
     }
 
 
@@ -64,7 +69,7 @@ export default function UpdateCourseCanvas() {
                 <Form.Control name='price' value={priceCourse}  onChange={(e) => {setPrice1(e.target.value);handle_validator("price")}} size='lg' type="te" placeholder="title course" />
                 {validator.current.message("price", priceCourse, "numeric|min:0,num")} <br />
                 <Form.Label><h4>انتخاب عکس دوره</h4></Form.Label>
-                <Form.Control name='imageUrl'  aria-describedby='imageUrl' type="file" size="lg" />
+                <Form.Control onChange={()=>console.log("hi work")} name='imageUrl'  aria-describedby='imageUrl' type="file" size="lg" />
                 <Form.Label ><h4>توضیحات درس</h4></Form.Label>
                 <Form.Control name='info' value={infoCourse}  onChange={(e) => {setInfoCourse(e.target.value);handle_validator("info")}} as="textarea" aria-label="With textarea" /> <hr />
                 {validator.current.message("info", infoCourse, "required|min:5")}<br />

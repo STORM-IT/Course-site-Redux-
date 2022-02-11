@@ -19,6 +19,7 @@ export default function UserContext({ children }) {
     const [currentPage, setCurrentPage] = useState(1);
     const [fullname, setFullname] = useState("");
     const [password, setPassword] = useState("")
+    const [urlImage, setUrlImage] = useState();
     const [policy, setPolicy] = useState();
     const [email, setEmail] = useState("");
     const [title, setTitle] = useState();
@@ -179,6 +180,8 @@ export default function UserContext({ children }) {
             setPrice,
             info,
             setInfo,
+            urlImage,
+            setUrlImage,
             handleLogin,
             handleSubmit,
             handle_create_course,

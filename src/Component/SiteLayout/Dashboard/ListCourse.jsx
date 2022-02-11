@@ -21,12 +21,9 @@ export default function List_Course({ courses }) {
 
 
   useEffect(() => {
-    
-    debugger
     setCourses(courses)
     setCourses(courses)
   }, [courses,Sort]);
-  // }, []);
   
   
   const { showCanvasCreate, setShowCanvasCreate, showCanvasUpdate, setShowCanvasUpdate, courseUpdate, setCourseUpdate, setPagination, currentPage } = useContext(context);
