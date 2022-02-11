@@ -19,8 +19,16 @@ export const context = createContext({
     setCourseUpdate:()=>{},
     currentPage:0,
     setPagination:()=>{},
+    title:"",
+    setTitle:()=>{},
+    price:"",
+    setPrice:()=>{},
+    info:"",
+    setInfo:()=>{},
     validator: null,
+    handle_validator:()=>{},
     handleClearState: () => { },
     handleLogin: () => { },
-    handleRegister: () => { }
+    handleRegister: () => { },
+    handle_create_course:()=>{ }
 })
