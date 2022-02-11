@@ -7,7 +7,7 @@ import { updateCourseTable } from '../../Redux/Action/Courses';
 export default function UpdateCourseCanvas() {
    
     const dispatch=useDispatch();
-    const {setShowCanvasUpdate,showCanvasUpdate,courseUpdate} = useContext(context);
+    const {setShowCanvasUpdate,showCanvasUpdate,courseUpdate,validator,handle_validator} = useContext(context);
 
   
 
@@ -58,13 +58,16 @@ export default function UpdateCourseCanvas() {
         <form action="" onSubmit={(e) => handleUpdateCourse(e)}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label ><h4>نام دوره</h4></Form.Label>
-                <Form.Control name='title' aria-describedby='title' value={titleCourse}  onChange={(e) => setTitleCourse(e.target.value)} size='lg' type="text" placeholder="title course" /> <br />
+                <Form.Control name='title' aria-describedby='title' value={titleCourse}  onChange={(e) => {setTitleCourse(e.target.value); handle_validator("title")}} size='lg' type="text" placeholder="title course" />
+                {validator.current.message("title", titleCourse, "required|min:5")} <br />
                 <Form.Label ><h4>قیمت دوره</h4></Form.Label>
-                <Form.Control name='price' value={priceCourse}  onChange={(e) => setPrice1(e.target.value)} size='lg' type="te" placeholder="title course" /> <br />
+                <Form.Control name='price' value={priceCourse}  onChange={(e) => {setPrice1(e.target.value);handle_validator("price")}} size='lg' type="te" placeholder="title course" />
+                {validator.current.message("price", priceCourse, "numeric|min:0,num")} <br />
                 <Form.Label><h4>انتخاب عکس دوره</h4></Form.Label>
-                <Form.Control name='imageUrl'  aria-describedby='imageUrl' type="file" size="lg" /><br />
+                <Form.Control name='imageUrl'  aria-describedby='imageUrl' type="file" size="lg" />
                 <Form.Label ><h4>توضیحات درس</h4></Form.Label>
-                <Form.Control name='info' value={infoCourse}  onChange={(e) => setInfoCourse(e.target.value)} as="textarea" aria-label="With textarea" /> <hr />
+                <Form.Control name='info' value={infoCourse}  onChange={(e) => {setInfoCourse(e.target.value);handle_validator("info")}} as="textarea" aria-label="With textarea" /> <hr />
+                {validator.current.message("info", infoCourse, "required|min:5")}<br />
                 <Button type='submit' className='p-3 btn-success w-100' ><h4>ویرایش دوره</h4></Button>
             </Form.Group>
         </form>
