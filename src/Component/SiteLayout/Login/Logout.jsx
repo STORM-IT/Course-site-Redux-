@@ -5,11 +5,11 @@ import { clearUser } from "../../Redux/Action/Use";
 
 const Logout = () => {
     const dispatch = useDispatch();
-    const navigate=useNavigate();
+    const navigate = useNavigate();
     useEffect(() => {
         localStorage.removeItem("token");
         dispatch(clearUser());
-        navigate("/",{replace:false})
+        navigate("/", { replace: false })
     }, []);
 
     return null;

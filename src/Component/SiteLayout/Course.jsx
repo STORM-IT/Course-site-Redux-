@@ -10,9 +10,7 @@ const Course = ({ courses }) => {
             </header>
             <div className="row">
                 {courses.map(course => (
-
                     <div key={course._id} className="col-lg-3 col-md-4 col-sm-6 col-xs-12 term-col">
-
                         <article>
                             <Link to={`/cource/${course._id}`} className="img-layer">
                                 <img src={`https://toplearnapi.ghorbany.dev/${course.imageUrl}`} />
@@ -23,9 +21,6 @@ const Course = ({ courses }) => {
                             <span>{course.price}</span>
                             <i>1:52:32</i>
                         </article>
-
-
-
                     </div>
                 ))}
             </div>

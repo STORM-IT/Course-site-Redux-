@@ -14,6 +14,7 @@ export const createNewCourse = (course) => {
         debugger
         const { data, status } = await createCourse(course);
         if (status === 201) toastify("SUCCESS","دوره با موفقیت ساخته شد");
+
         await dispatch({
             type: "ADD_COURSE",
             payload: [...getState().courses, data.course],
@@ -25,12 +26,17 @@ export const removeCourseTable=courseId=>{
     return async (dispatch,getState)=>{
         try{
             debugger
-            const {status } = await deleteCourse(courseId)
+            const { status } = await deleteCourse(courseId)
+            const {data} =await getCourses();
             if(status==200)toastify("SUCCESS","دوره با موفقیت حذف شد ");
             await dispatch({
                 type: "REMOVE_COURSE",
-                payload: {...getState().courses},
+                payload:data.courses,
             });
+            // await dispatch({
+            //     type: "REMOVE_COURSE",
+            //     payload: {...getState().courses},
+            // });
         }catch(ex){
             console.log(ex);
         }

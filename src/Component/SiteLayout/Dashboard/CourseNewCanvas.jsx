@@ -34,7 +34,7 @@ export default function CourseNewCanvas() {
                         <Form.Control name='price' onChange={(e) => { setPrice(e.target.value); handle_validator("price") }} size='lg' type="te" placeholder="title course" />
                         {validator.current.message("price", price, "numeric|min:0,num")} <br />
                         <Form.Label><h4>انتخاب عکس دوره</h4></Form.Label>
-                        <Form.Control name='imageUrl' onChange={()=>{setUrlImage(true); handle_validator("imageUrl")}} aria-describedby='imageUrl' type="file" size="lg" />
+                        <Form.Control name='imageUrl' onChange={() => { setUrlImage(true); handle_validator("imageUrl") }} aria-describedby='imageUrl' type="file" size="lg" />
                         {validator.current.message("imageUrl", urlImage, "required")} <br />
                         <Form.Label ><h4>توضیحات درس</h4></Form.Label>
                         <Form.Control name='info' onChange={(e) => { setInfo(e.target.value); handle_validator("info") }} as="textarea" aria-label="With textarea" /> <hr />

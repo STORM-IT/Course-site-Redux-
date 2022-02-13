@@ -1,20 +1,17 @@
 import React, { Fragment } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { singleCourse } from "../Redux/Action/Course";
+import { useSelector } from "react-redux";
 import _ from 'lodash'
-import httpService from "../services/httpService";
 import { checkId } from "../utils/checkFormatId";
 import { Navigate } from "react-router";
-// import Pagination from "./Pagination";
 
-const SingleCourse = ({http}) => {
-    const course= useSelector(state=>state.course)
+const SingleCourse = ({ http }) => {
+
+    const course = useSelector(state => state.course)
+
     const commentLength = _.range(5)
-    // const dispatch=useDispatch();
-debugger
-    if(!checkId(course._id)) {
 
-        return <Navigate to={'/'}/>
+    if (!checkId(course._id)) {
+        return <Navigate to={'/'} />
     }
     return (
         <Fragment>
@@ -25,7 +22,7 @@ debugger
                 <div className="row">
                     <div className="col-md-8 col-sm-12 col-xs-12 pull-left">
                         <section className="term-description">
-                            <img src={http+"/"+course.imageUrl} />
+                            <img src={http + "/" + course.imageUrl} />
 
                             <p>{course.info} </p>
 
@@ -170,27 +167,23 @@ debugger
                                 </form>
 
                                 <div className="comment-list">
-                                    {commentLength.map(()=>(
-                                    <div className="comment-row">
-                                        <img src="../images/pic/avatar.jpg" />
-                                        <div className="left-col">
-                                            <h3> میترا رحیمی </h3>
-                                            <span>12/03/1397</span>
-                                            <p>
-                                                لورم ایپسوم متن ساختگی با تولید
-                                                سادگی نامفهوم از صنعت چاپ و با
-                                                استفاده از طراحان گرافیک است.
-                                                چاپگرها و متون بلکه روزنامه و
-                                                مجله در ستون و سطرآنچنان که لازم
-                                                است
-                                            </p>
+                                    {commentLength.map(() => (
+                                        <div className="comment-row">
+                                            <img src="../images/pic/avatar.jpg" />
+                                            <div className="left-col">
+                                                <h3> میترا رحیمی </h3>
+                                                <span>12/03/1397</span>
+                                                <p>
+                                                    لورم ایپسوم متن ساختگی با تولید
+                                                    سادگی نامفهوم از صنعت چاپ و با
+                                                    استفاده از طراحان گرافیک است.
+                                                    چاپگرها و متون بلکه روزنامه و
+                                                    مجله در ستون و سطرآنچنان که لازم
+                                                    است
+                                                </p>
+                                            </div>
                                         </div>
-                                    </div>
                                     ))}
-
-                                   
-
-                                    {/* <Pagination /> */}
                                 </div>
                             </div>
                         </section>

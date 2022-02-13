@@ -1,7 +1,6 @@
-import { render } from '@testing-library/react';
 import React, { Fragment, useContext, useState } from 'react'
 import { useEffect } from 'react';
-import { Alert, Button, Dropdown, Form, Offcanvas, Table } from 'react-bootstrap'
+import { Alert, Button, Dropdown, Form, Table } from 'react-bootstrap'
 import { useDispatch } from 'react-redux';
 import { context } from '../../ContextApi/context';
 import { removeCourseTable, searchCourse } from '../../Redux/Action/Courses';
@@ -9,49 +8,44 @@ import { paginate } from '../../utils/PaginateIndexSlice';
 import Pagination from '../Pagination'
 import CourseNewCanvas from './CourseNewCanvas';
 import UpdateCourseCanvas from './updateCourseCanvas';
-// import {} from ''
 
 export default function List_Course({ courses }) {
 
   const [Courses, setCourses] = useState(courses);
-  const [Sort,setSort]=useState();
-  const [,updateForce]=useState();
+  const [Sort, setSort] = useState();
+  const [, updateForce] = useState();
 
   const dispatch = useDispatch();
-
 
   useEffect(() => {
     setCourses(courses)
     setCourses(courses)
-  }, [courses,Sort]);
-  
-  
+  }, [courses, Sort]);
+
+
   const { showCanvasCreate, setShowCanvasCreate, showCanvasUpdate, setShowCanvasUpdate, courseUpdate, setCourseUpdate, setPagination, currentPage } = useContext(context);
-  const sortListCourse=sortType=>{
+  const sortListCourse = sortType => {
     debugger
     switch (sortType) {
       case "HIGH":
-        // Courses.sort(function(a, b){return   b.price - a.price})
-        Courses.sort(function(a, b){return   b.price - a.price})
+        Courses.sort(function (a, b) { return b.price - a.price })
         updateForce(1)
         break;
-        case "LOW":
-          Courses.sort(function(a, b){return a.price - b.price})
-          updateForce(2)
-          break;
-          
-          default:
-            break;
-          }
+      case "LOW":
+        Courses.sort(function (a, b) { return a.price - b.price })
+        updateForce(2)
+        break;
+
+      default:
+        break;
+    }
 
   }
   const filteCourse = (character) => {
-    
     setCourses(courses.filter(course => course.title.includes(character)))
   }
   const IndedCourses = paginate(Courses, currentPage, 9)
-  
-  console.log("object");
+
   const handle_show_update_course = (course) => {
     setCourseUpdate(course)
     setShowCanvasUpdate(true)
@@ -68,10 +62,10 @@ export default function List_Course({ courses }) {
           </Dropdown.Toggle>
 
           <Dropdown.Menu variant="dark">
-            <Dropdown.Item onClick={()=>sortListCourse("LOW")}><h5>کم به زیاد</h5></Dropdown.Item>
-            <Dropdown.Item onClick={()=>sortListCourse("HIGH")}><h5>زیاد به کم</h5></Dropdown.Item>
+            <Dropdown.Item onClick={() => sortListCourse("LOW")}><h5>کم به زیاد</h5></Dropdown.Item>
+            <Dropdown.Item onClick={() => sortListCourse("HIGH")}><h5>زیاد به کم</h5></Dropdown.Item>
             <Dropdown.Divider />
-            <Dropdown.Item onClick={()=>sortListCourse("")}><h5>بدون فیلتر</h5></Dropdown.Item>
+            <Dropdown.Item onClick={() => sortListCourse("")}><h5>بدون فیلتر</h5></Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
 

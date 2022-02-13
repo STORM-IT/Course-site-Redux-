@@ -1,28 +1,19 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { BrowserRouter as Router,Link } from 'react-router-dom'
+import { BrowserRouter as Router, Link } from 'react-router-dom'
 import _ from 'lodash'
 import { useDispatch } from 'react-redux'
 import { clearUser } from '../Redux/Action/Use'
 
-
-
-
-
-// import LoadingBar  from 'react-redux-loading-bar'
 export default function Head_Home() {
-    const User=useSelector(state=>state.user)
-    const dispatch=useDispatch()
+
+    const User = useSelector(state => state.user)
+
+    const dispatch = useDispatch()
 
     return (
-        // <Router>
-
-    
-        
         <div className="landing-layer">
-            
             <div className="container">
-            
                 <nav>
                     <div className="row">
                         <div className="col-sm-6 col-xs-12">
@@ -36,26 +27,26 @@ export default function Head_Home() {
                         </div>
                         <div className="col-sm-6 col-xs-12">
                             <div className="clientarea">
-                                {_.isEmpty(User)?(
+                                {_.isEmpty(User) ? (
 
-                                <div className="signin ">
-                                    <i className="zmdi zmdi-account"></i>
-                                    <Link to="/Login"> ورود </Link> /
-                                    <Link to="/Register"> عضویت </Link>
-                                </div>
-                                ):(
+                                    <div className="signin ">
+                                        <i className="zmdi zmdi-account"></i>
+                                        <Link to="/Login"> ورود </Link> /
+                                        <Link to="/Register"> عضویت </Link>
+                                    </div>
+                                ) : (
 
-                                <div className="loggein">
-                                    <i className="zmdi zmdi-account"></i>
-                                    <Link to="/Acount_Info">{User.fullname}</Link> {" / "}
-                                    {!User.isAdmin ?(
-                                        
+                                    <div className="loggein">
+                                        <i className="zmdi zmdi-account"></i>
+                                        <Link to="/Acount_Info">{User.fullname}</Link> {" / "}
+                                        {!User.isAdmin ? (
+
                                             <Link to="/dashboard"> داشبورد  {" / "}</Link>
-                                        
-                                    ):(null)}
-                                
-                                    <Link to="/Logout" onClick={()=>dispatch(clearUser())}>خروج از حساب کاربری</Link>
-                                </div>
+
+                                        ) : (null)}
+
+                                        <Link to="/Logout" onClick={() => dispatch(clearUser())}>خروج از حساب کاربری</Link>
+                                    </div>
                                 )}
                             </div>
                         </div>
@@ -64,7 +55,6 @@ export default function Head_Home() {
                 <header>
                     <Link to="/" className="logo">
                         <img src="./images/logo.png" />
-                        {/* <img src="../../../public/images/logo.png" /> */}
                     </Link>
                     <h1> با اساتید مجرب و کارآزموده در خودآموز تاپ لرن </h1>
                     <h2>
@@ -87,6 +77,5 @@ export default function Head_Home() {
                 </div>
             </div>
         </div>
-        // </Router>
     )
 }

@@ -5,9 +5,7 @@ import { context } from '../../ContextApi/context';
 
 export default function Login() {
 
-
-    const Context = useContext(context)
-    const { email, setEmail, validator, password, setPassword, handleLogin } = Context
+    const { email, setEmail, validator, password, setPassword, handleLogin } = useContext(context)
 
     return (
         <main className="client-page">
@@ -17,7 +15,6 @@ export default function Login() {
                 <link rel="canonical" href="http://mysite.com/example" />
             </Helmet>
             <div className="container-content">
-                {/* {loading?(<Sugar />):null} */}
                 <header><h2> ورود به سایت </h2></header>
 
                 <div className="form-layer">

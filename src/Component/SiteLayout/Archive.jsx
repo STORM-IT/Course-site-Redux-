@@ -1,23 +1,22 @@
-import React, { Fragment,useState } from 'react'
+import React, { Fragment, useState } from 'react'
 import { Helmet } from 'react-helmet'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import Pagination from './Pagination'
-import {paginate} from './../utils/PaginateIndexSlice'
+import { paginate } from './../utils/PaginateIndexSlice'
 import { singleCourse } from '../Redux/Action/Course'
 import { useDispatch } from 'react-redux'
-import {Img} from 'react-image'
+import { Img } from 'react-image'
 import { Spin } from "react-cssfx-loading";
-import Navbar from './Navbar'
 export default function Archive({ http }) {
 
-    const [paginNumber,setPaginNumber] = useState(1);
-    const courses_state=useSelector(state=>state.courses)
-    const dispatch=useDispatch()
+    const [paginNumber, setPaginNumber] = useState(1);
+    const courses_state = useSelector(state => state.courses)
+    const dispatch = useDispatch()
 
-    const courses=paginate(courses_state,paginNumber,9)
-    // debugger
-    const handelePaginNumber=(pagin)=>{
+    const courses = paginate(courses_state, paginNumber, 9)
+
+    const handelePaginNumber = (pagin) => {
         setPaginNumber(pagin);
     }
     return (
@@ -141,22 +140,22 @@ export default function Archive({ http }) {
                                         <div key={course._id} className="col-lg-4 col-md-4 col-sm-6 col-xs-12 term-col">
                                             <article>
                                                 {/* <Link to={"/archive/singleCourse"} className="img-layer" onClick={()=>dispatch(singleCourse(course._id))}><Img src={http+"/"+course.imageUrl} loader={<div style={{width:"100px",textAlign:"center"}} className=""><Spin/></div>}/></Link> */}
-                                                <Link to={"/archive/singleCourse"} className="img-layer" onClick={()=>dispatch(singleCourse(course._id))}><Img src={http+"/"+course.imageUrl} loader={<div className="d-flex justify-content-center"><Spin/></div>}/></Link>
-                                                <h2><Link to={"/archive/singleCourse"} onClick={()=>dispatch( singleCourse(course._id))} >{course.title}</Link></h2>
+                                                <Link to={"/archive/singleCourse"} className="img-layer" onClick={() => dispatch(singleCourse(course._id))}><Img src={http + "/" + course.imageUrl} loader={<div className="d-flex justify-content-center"><Spin /></div>} /></Link>
+                                                <h2><Link to={"/archive/singleCourse"} onClick={() => dispatch(singleCourse(course._id))} >{course.title}</Link></h2>
                                                 <span>{course.price}</span>
                                                 <i>1:52:32</i>
                                             </article>
                                         </div>
                                     ))}
                                 </div>
-                                        <Pagination currentPage={paginNumber} totallCoursesLength={courses_state.length} courseLength={9} setPagination={handelePaginNumber}/>
+                                <Pagination currentPage={paginNumber} totallCoursesLength={courses_state.length} courseLength={9} setPagination={handelePaginNumber} />
                             </section>
                         </div>
                     </div>
                 </section>
             </div>
-            
-                                {/* <Zoom/> */}
+
+            {/* <Zoom/> */}
         </Fragment>
     )
 }

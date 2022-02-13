@@ -4,12 +4,10 @@ import { Link ,Outlet } from "react-router-dom";
 import Helmet from "react-helmet";
 import AdminTopNav from "./AdminTopNav";
 import AdminSidebar from "./AdminSidebar";
-import { Table } from "react-bootstrap";
 
 const PrivateLayout = ({ children , location }) => {
     const user = useSelector((state) => state.user);
-    const courses = useSelector(state=>state.courses)
-// console.log(location);
+
 console.log("private");
     return (
         <div id="wrapper">

@@ -1,11 +1,10 @@
-import React ,{Fragment, useEffect} from 'react'
+import React ,{Fragment} from 'react'
 import { useSelector } from 'react-redux'
 import { Link , Navigate} from 'react-router-dom'
 import {isEmpty} from 'lodash'
 export default function Acount() {
     
     const User=useSelector(state=>state.user)
-    // console.log(User);
 
     if(isEmpty(User)) return <Navigate to="/"/>
   return (

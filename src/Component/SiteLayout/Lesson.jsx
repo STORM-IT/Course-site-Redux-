@@ -1,15 +1,15 @@
 import React from 'react'
 
 export default function Lessen() {
-  return (
-    <div className="container">
+    return (
+        <div className="container">
             <section className="term-content">
                 <header><h1> دوره آموزشی ساخت ربات تلگرام </h1></header>
                 <div className="row">
 
                     <div className="col-md-8 col-sm-12 col-xs-12 pull-left">
                         <section className="term-description">
-                            <img src="images/pic/big-thumb.jpg"/>
+                            <img src="images/pic/big-thumb.jpg" />
 
                             <h2> ربات تلگرام برای چه کاری مفید است ؟ </h2>
                             <p>
@@ -38,13 +38,13 @@ export default function Lessen() {
                                     <div className="row">
                                         <div className="col-md-4 col-sm-12 col-xs-12">
                                             <div className="form-group">
-                                                <input type="text" className="form-control" placeholder="نام و نام خانوادگی"/>
+                                                <input type="text" className="form-control" placeholder="نام و نام خانوادگی" />
                                             </div>
                                             <div className="form-group">
-                                                <input type="text" className="form-control" placeholder="ایمیل"/>
+                                                <input type="text" className="form-control" placeholder="ایمیل" />
                                             </div>
                                             <div className="form-group">
-                                                <input type="text" className="form-control" placeholder="شماره تماس"/>
+                                                <input type="text" className="form-control" placeholder="شماره تماس" />
                                             </div>
                                         </div>
                                         <div className="col-md-8 col-sm-12 col-xs-12">
@@ -54,11 +54,11 @@ export default function Lessen() {
                                             <div className="row">
                                                 <div className="col-md-8 col-sm-7 col-xs-7">
                                                     <div className="form-group">
-                                                        <input type="text" className="form-control" placeholder="کد امنیتی"/>
+                                                        <input type="text" className="form-control" placeholder="کد امنیتی" />
                                                     </div>
                                                 </div>
                                                 <div className="col-md-4 col-sm-5 col-xs-5">
-                                                    <img src="images/captcha.jpg"/>
+                                                    <img src="images/captcha.jpg" />
                                                 </div>
                                             </div>
                                         </div>
@@ -69,9 +69,9 @@ export default function Lessen() {
                                 </form>
 
                                 <div className="comment-list">
-                                
+
                                     <div className="comment-row">
-                                        <img src="images/pic/avatar.jpg"/>
+                                        <img src="images/pic/avatar.jpg" />
                                         <div className="left-col">
                                             <h3> میترا رحیمی </h3>
                                             <span>12/03/1397</span>
@@ -80,9 +80,9 @@ export default function Lessen() {
                                             </p>
                                         </div>
                                     </div>
-                                   
+
                                     <div className="comment-row">
-                                        <img src="images/pic/avatar.jpg"/>
+                                        <img src="images/pic/avatar.jpg" />
                                         <div className="left-col">
                                             <h3> میترا رحیمی </h3>
                                             <span>12/03/1397</span>
@@ -91,10 +91,10 @@ export default function Lessen() {
                                             </p>
                                         </div>
                                     </div>
-                                    
-                                   
+
+
                                     <div className="comment-row">
-                                        <img src="images/pic/avatar.jpg"/>
+                                        <img src="images/pic/avatar.jpg" />
                                         <div className="left-col">
                                             <h3> میترا رحیمی </h3>
                                             <span>12/03/1397</span>
@@ -103,9 +103,9 @@ export default function Lessen() {
                                             </p>
                                         </div>
                                     </div>
-                                  
+
                                     <div className="comment-row">
-                                        <img src="images/pic/avatar.jpg"/>
+                                        <img src="images/pic/avatar.jpg" />
                                         <div className="left-col">
                                             <h3> میترا رحیمی </h3>
                                             <span>12/03/1397</span>
@@ -114,9 +114,9 @@ export default function Lessen() {
                                             </p>
                                         </div>
                                     </div>
-                                  
+
                                     <div className="comment-row">
-                                        <img src="images/pic/avatar.jpg"/>
+                                        <img src="images/pic/avatar.jpg" />
                                         <div className="left-col">
                                             <h3> میترا رحیمی </h3>
                                             <span>12/03/1397</span>
@@ -125,22 +125,22 @@ export default function Lessen() {
                                             </p>
                                         </div>
                                     </div>
-                                    
+
 
                                     <nav aria-label="Page navigation">
                                         <ul className="pagination justify-content-center">
                                             <li className="page-item">
-                                              <a className="page-link" href="#" aria-label="Previous">
-                                                <span aria-hidden="true"><i className="zmdi zmdi-chevron-right"></i></span>
-                                              </a>
+                                                <a className="page-link" href="#" aria-label="Previous">
+                                                    <span aria-hidden="true"><i className="zmdi zmdi-chevron-right"></i></span>
+                                                </a>
                                             </li>
                                             <li className="page-item"><a className="page-link" href="#">1</a></li>
                                             <li className="page-item"><a className="page-link" href="#">2</a></li>
                                             <li className="page-item"><a className="page-link" href="#">3</a></li>
                                             <li className="page-item">
-                                              <a className="page-link" href="#" aria-label="Next">
-                                                <span aria-hidden="true"><i className="zmdi zmdi-chevron-left"></i></span>
-                                              </a>
+                                                <a className="page-link" href="#" aria-label="Next">
+                                                    <span aria-hidden="true"><i className="zmdi zmdi-chevron-left"></i></span>
+                                                </a>
                                             </li>
                                         </ul>
                                     </nav>
@@ -171,10 +171,10 @@ export default function Lessen() {
                         </div>
 
                         <article className="teacher-info">
-                            <img src="images/pic/avatar.jpg"/>
+                            <img src="images/pic/avatar.jpg" />
                             <h2> مدرس : ایمان مدائنی </h2>
                             <p>
-                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است استفاده از طراحان گرافیک است ... 
+                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است استفاده از طراحان گرافیک است ...
                             </p>
                         </article>
 
@@ -212,5 +212,5 @@ export default function Lessen() {
                 </div>
             </section>
         </div>
-  )
+    )
 }
